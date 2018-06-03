@@ -21,6 +21,7 @@
 		D92268D020C413AE001A1ACF /* ListCoinsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92268CF20C413AE001A1ACF /* ListCoinsWorker.swift */; };
 		D92268D320C423A3001A1ACF /* InteractorObserverProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92268D220C423A3001A1ACF /* InteractorObserverProtocol.swift */; };
 		D92268D520C42673001A1ACF /* Coin.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92268D420C42673001A1ACF /* Coin.swift */; };
+		D93599DE20C4422A00237C51 /* CurrencyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93599DD20C4422A00237C51 /* CurrencyViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		D92268CF20C413AE001A1ACF /* ListCoinsWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCoinsWorker.swift; sourceTree = "<group>"; };
 		D92268D220C423A3001A1ACF /* InteractorObserverProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractorObserverProtocol.swift; sourceTree = "<group>"; };
 		D92268D420C42673001A1ACF /* Coin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coin.swift; sourceTree = "<group>"; };
+		D93599DD20C4422A00237C51 /* CurrencyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyViewModel.swift; sourceTree = "<group>"; };
 		E5617E1ADEFE1D2EDBCA6B59 /* Pods_CryptoCurrencyTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CryptoCurrencyTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -87,8 +89,9 @@
 			isa = PBXGroup;
 			children = (
 				D92268AA20C40804001A1ACF /* AppDelegate.swift */,
-				D92268CC20C40FE9001A1ACF /* DataLayer */,
 				D92268CB20C40FDA001A1ACF /* NetworkLayer */,
+				D92268CC20C40FE9001A1ACF /* DataLayer */,
+				D93599DC20C4421000237C51 /* ViewModels */,
 				D92268BD20C40AA2001A1ACF /* Controllers */,
 				D92268BC20C40A7B001A1ACF /* Resources */,
 				D92268B620C40805001A1ACF /* Info.plist */,
@@ -120,7 +123,6 @@
 				D92268BF20C40ADB001A1ACF /* CurrencyListVC.swift */,
 				D92268C320C40BD8001A1ACF /* CurrencyListPresenter.swift */,
 				D92268C520C40BE9001A1ACF /* CurrencyListInteractor.swift */,
-				D92268C920C40CD9001A1ACF /* CurrencyListViewModel.swift */,
 				D92268C720C40C04001A1ACF /* CurrencyListView.swift */,
 				D92268C020C40ADB001A1ACF /* CurrencyListVC.xib */,
 			);
@@ -142,6 +144,15 @@
 				D92268D420C42673001A1ACF /* Coin.swift */,
 			);
 			path = DataLayer;
+			sourceTree = "<group>";
+		};
+		D93599DC20C4421000237C51 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				D93599DD20C4422A00237C51 /* CurrencyViewModel.swift */,
+				D92268C920C40CD9001A1ACF /* CurrencyListViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		F0C49818D3576CA9B1CEA753 /* Frameworks */ = {
@@ -269,6 +280,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D92268D320C423A3001A1ACF /* InteractorObserverProtocol.swift in Sources */,
+				D93599DE20C4422A00237C51 /* CurrencyViewModel.swift in Sources */,
 				D92268AB20C40804001A1ACF /* AppDelegate.swift in Sources */,
 				D92268CE20C4103B001A1ACF /* APIClient.swift in Sources */,
 				D92268D020C413AE001A1ACF /* ListCoinsWorker.swift in Sources */,

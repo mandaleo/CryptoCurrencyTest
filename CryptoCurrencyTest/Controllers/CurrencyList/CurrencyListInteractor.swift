@@ -14,6 +14,8 @@ class CurrencyListInteractor {
     //MARK: - Variables
     var delegate: InteractorObserverProtocol?
     fileprivate var database: Realm!
+    var currentPage = 0
+    var lastPage = 0
     var listResults: Results<Coin>!
     
     //MARK: - Initialization and configuration
@@ -23,7 +25,7 @@ class CurrencyListInteractor {
         if (listResults != nil) && listResults.count > 0 {
            delegate?.interactorDidChange()
         }else {
-            moreCoins(nextPage: 1)
+            moreCoins(nextPage: currentPage)
         }
     }
     
