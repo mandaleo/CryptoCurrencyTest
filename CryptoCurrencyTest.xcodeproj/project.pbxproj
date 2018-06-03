@@ -20,6 +20,7 @@
 		D92268CE20C4103B001A1ACF /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92268CD20C4103B001A1ACF /* APIClient.swift */; };
 		D92268D020C413AE001A1ACF /* ListCoinsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92268CF20C413AE001A1ACF /* ListCoinsWorker.swift */; };
 		D92268D320C423A3001A1ACF /* InteractorObserverProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92268D220C423A3001A1ACF /* InteractorObserverProtocol.swift */; };
+		D92268D520C42673001A1ACF /* Coin.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92268D420C42673001A1ACF /* Coin.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		D92268CD20C4103B001A1ACF /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		D92268CF20C413AE001A1ACF /* ListCoinsWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCoinsWorker.swift; sourceTree = "<group>"; };
 		D92268D220C423A3001A1ACF /* InteractorObserverProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractorObserverProtocol.swift; sourceTree = "<group>"; };
+		D92268D420C42673001A1ACF /* Coin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coin.swift; sourceTree = "<group>"; };
 		E5617E1ADEFE1D2EDBCA6B59 /* Pods_CryptoCurrencyTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CryptoCurrencyTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -137,6 +139,7 @@
 		D92268CC20C40FE9001A1ACF /* DataLayer */ = {
 			isa = PBXGroup;
 			children = (
+				D92268D420C42673001A1ACF /* Coin.swift */,
 			);
 			path = DataLayer;
 			sourceTree = "<group>";
@@ -269,6 +272,7 @@
 				D92268C620C40BE9001A1ACF /* CurrencyListInteractor.swift in Sources */,
 				D92268C420C40BD8001A1ACF /* CurrencyListPresenter.swift in Sources */,
 				D92268C820C40C04001A1ACF /* CurrencyListView.swift in Sources */,
+				D92268D520C42673001A1ACF /* Coin.swift in Sources */,
 				D92268C120C40ADB001A1ACF /* CurrencyListVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

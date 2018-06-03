@@ -16,6 +16,17 @@ class ListCoinsWorker {
         let headers: HTTPHeaders = [
             "Accept": "application/json"
         ]
-        APIClient().makeRequest(method: .get, endPoint: "/coins", params: params, headers: headers, completion: completion)
+        APIClient().makeRequest(method: .get, endPoint: "/coins", params: params, headers: headers){ (maybeJson: Dictionary<String, Any>?) in
+            if let json = maybeJson, let coins = json["coins"] as? Dictionary<String, Any>, let data = coins["data"] as? [Dictionary<String, Any>] {
+                let jsonDecoder = JSONDecoder()
+                for currency in data {
+                    if let currencyData = try? JSONSerialization.data(withJSONObject: currency) {
+                        let coin = try! jsonDecoder.decode(Coin.self, from: currencyData)
+                        print(coin)
+                    }
+                }
+            }
+            completion()
+        }
     }
 }
