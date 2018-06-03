@@ -20,6 +20,10 @@ extension UserDefaults {
         }
     }
     
+    func getCurrentPage() -> Int {
+        return UserDefaults.standard.integer(forKey: "getNextPage")
+    }
+    
     func getNextPage() -> Int {
         let nextPage = UserDefaults.standard.integer(forKey: "getNextPage") + 1
         UserDefaults.standard.set(nextPage, forKey: "getNextPage")

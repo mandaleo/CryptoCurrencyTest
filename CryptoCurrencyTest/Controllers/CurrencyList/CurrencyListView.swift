@@ -8,10 +8,6 @@
 
 import UIKit
 
-@objc protocol CurrencyListViewProtocol {
-    @objc optional func loadMoreData()
-}
-
 
 class CurrencyListView: UIView, UITableViewDelegate, UITableViewDataSource {
     
@@ -20,7 +16,7 @@ class CurrencyListView: UIView, UITableViewDelegate, UITableViewDataSource {
     
     //MARK: - Variables
     fileprivate var viewModel: CurrencyListViewModel?
-    var delegate: CurrencyListViewProtocol?
+    var isLoading = false
     
      //MARK: - Initialization and configuration
     override func awakeFromNib() {
@@ -32,10 +28,16 @@ class CurrencyListView: UIView, UITableViewDelegate, UITableViewDataSource {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(CurrencyListCell.nib, forCellReuseIdentifier: CurrencyListCell.cellIdentifier)
+        tableView.tableFooterView = footerView()
     }
     
     func presentViewModel(vm: CurrencyListViewModel) {
+        isLoading = false
         viewModel = vm
+        if UserDefaults.standard.getCurrentPage() == UserDefaults.standard.getFinalPage() {
+            isLoading = true
+            tableView.tableFooterView = UIView()
+        }
         tableView.reloadData()
     }
     
@@ -53,5 +55,26 @@ class CurrencyListView: UIView, UITableViewDelegate, UITableViewDataSource {
         cell?.presentViewModel(viewModel: item!)
         
         return cell!
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        guard let itemsCount = viewModel?.currencyList.count else {return}
+        if !isLoading && indexPath.row == itemsCount - 1 {
+            isLoading = true
+            let nc = NotificationCenter.default
+            nc.post(name: Notification.Name("loadMoreData"), object: nil)
+        }
+    }
+    
+    
+    func footerView() -> UIView {
+        let footerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 50))
+        footerView.backgroundColor = UIColor.white
+        let spinner = UIActivityIndicatorView(frame: CGRect(x: (footerView.frame.size.width - 15) / 2, y: (footerView.frame.size.height - 25) / 2, width: 30, height: 30))
+        spinner.activityIndicatorViewStyle = .whiteLarge
+        spinner.color = UIColor.blue
+        spinner.startAnimating()
+        footerView.addSubview(spinner)
+        return footerView
     }
 }

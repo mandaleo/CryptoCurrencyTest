@@ -33,10 +33,10 @@ class CurrencyListCell: UITableViewCell {
     }
     
     func presentViewModel(viewModel: CurrencyViewModel) {
-        nameLabel.text = viewModel.name
-        currentPriceLabel.text = "\(viewModel.priceUSD)"
-        percentLastHourLabel.text = "\(viewModel.percentageLastHour)"
-        percentLastDayLabel.text = "\(viewModel.percentageLastDay)"
-        percentLastWeekLabel.text = "\(viewModel.percentageLastWeek)"
+        nameLabel.text = "Name: " + viewModel.name
+        currentPriceLabel.text = "Price: \(viewModel.priceUSD)"
+        percentLastHourLabel.text = "Percentage change last hour: \(viewModel.percentageLastHour)"
+        percentLastDayLabel.text = "Percentage change last day: \(viewModel.percentageLastDay)"
+        percentLastWeekLabel.text = "Percentage change last week: \(viewModel.percentageLastWeek)"
     }
 }

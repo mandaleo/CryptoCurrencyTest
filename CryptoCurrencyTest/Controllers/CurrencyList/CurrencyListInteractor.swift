@@ -25,12 +25,17 @@ class CurrencyListInteractor {
         }else {
             moreCoins()
         }
+        NotificationCenter.default.addObserver(self, selector: #selector(moreCoins), name: Notification.Name("loadMoreData"), object: nil)
     }
     
-    func moreCoins(){
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    @objc func moreCoins(){
         let nextPage = UserDefaults.standard.getNextPage()
         let finalPage = UserDefaults.standard.getFinalPage()
-        if nextPage <= finalPage {
+        if nextPage <= finalPage || finalPage == 0 {
             _ = ListCoinsWorker(withDatabase: database, page: nextPage){
                 self.listResults = Coin.fetchCoins(realm: self.database)
                 self.delegate?.interactorDidChange()
