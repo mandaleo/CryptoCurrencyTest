@@ -10,4 +10,7 @@ import Foundation
 
 class CurrencyListInteractor {
     
+    init() {
+        _ = ListCoinsWorker(withPage: 1)
+    }
 }

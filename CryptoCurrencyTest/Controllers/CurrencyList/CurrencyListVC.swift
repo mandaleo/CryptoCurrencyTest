@@ -23,6 +23,7 @@ class CurrencyListVC: UIViewController {
     //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupVIP()
     }
     
     
