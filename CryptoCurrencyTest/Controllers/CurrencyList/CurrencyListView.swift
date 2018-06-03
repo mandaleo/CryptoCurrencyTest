@@ -8,6 +8,9 @@
 
 import UIKit
 
+protocol CurrencyListDelegate {
+    func didSelectRow(viewModel:CurrencyViewModel)
+}
 
 class CurrencyListView: UIView, UITableViewDelegate, UITableViewDataSource {
     
@@ -17,6 +20,7 @@ class CurrencyListView: UIView, UITableViewDelegate, UITableViewDataSource {
     //MARK: - Variables
     fileprivate var viewModel: CurrencyListViewModel?
     var isLoading = false
+    var delegate: CurrencyListDelegate?
     
      //MARK: - Initialization and configuration
     override func awakeFromNib() {
@@ -55,6 +59,11 @@ class CurrencyListView: UIView, UITableViewDelegate, UITableViewDataSource {
         cell?.presentViewModel(viewModel: item!)
         
         return cell!
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let vm = viewModel?.currencyList[indexPath.row] else {return}
+        delegate?.didSelectRow(viewModel: vm)
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {

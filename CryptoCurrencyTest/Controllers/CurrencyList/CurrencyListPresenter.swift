@@ -11,7 +11,7 @@ import UIKit
 class CurrencyListPresenter: InteractorObserverProtocol {
     
     //MARK: - Variables
-    fileprivate weak var view: CurrencyListView!
+    weak var view: CurrencyListView!
     fileprivate weak var interactor: CurrencyListInteractor?
     
     

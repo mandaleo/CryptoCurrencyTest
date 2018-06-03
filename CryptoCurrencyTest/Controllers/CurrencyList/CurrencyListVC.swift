@@ -9,7 +9,7 @@
 import UIKit
 import RealmSwift
 
-class CurrencyListVC: UIViewController {
+class CurrencyListVC: UIViewController, CurrencyListDelegate {
     
     //MARK: - Outlets
     @IBOutlet var currencyListview: CurrencyListView!
@@ -28,6 +28,7 @@ class CurrencyListVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupVIP()
+        setupTopBar()
     }
     
     
@@ -36,5 +37,15 @@ class CurrencyListVC: UIViewController {
         interactor = CurrencyListInteractor(withDatabase: realm)
         presenter = CurrencyListPresenter(container: currencyListview, interactor: interactor)
         presenter?.interactorDidChange()
+        presenter?.view.delegate = self
+    }
+    
+    func setupTopBar(){
+        self.title = "Currency List"
+    }
+    
+    //MARK: - CurrencyListDelegate
+    func didSelectRow(viewModel: CurrencyViewModel) {
+        print("tap")
     }
 }
