@@ -46,6 +46,8 @@ class CurrencyListVC: UIViewController, CurrencyListDelegate {
     
     //MARK: - CurrencyListDelegate
     func didSelectRow(viewModel: CurrencyViewModel) {
-        print("tap")
+        let detailCurrencyVC = CurrencyDetailVC()
+        detailCurrencyVC.configure(withDatabase: realm, vm: viewModel)
+        navigationController?.pushViewController(detailCurrencyVC, animated: true)
     }
 }
