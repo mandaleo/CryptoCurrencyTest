@@ -7,41 +7,51 @@
 //
 
 import Foundation
+import RealmSwift
 
-struct Coin: Codable {
-    var id: Int
-    var name : String
-    var symbol: String
-    //var logo: Any
-    var rank: Int
-    var price_usd: String
-    var price_btc: String
-    var volume_usd: Int
-    var market_cap_usd: Int
-    var available_supply: Int
-    var total_supply: Int
-    var percent_change_1h: String
-    var percent_change_24h: String
-    var percent_change_7d: String
-    var created_at: String
-    var updated_at: String
+class Coin: Object {
+    @objc dynamic var id = 0
+    @objc dynamic var name = ""
+    @objc dynamic var symbol = ""
+    //var logo= Any
+    @objc dynamic var rank = 0
+    @objc dynamic var price_usd = ""
+    @objc dynamic var price_btc = ""
+    @objc dynamic var volume_usd = 0
+    @objc dynamic var market_cap_usd = 0
+    @objc dynamic var available_supply = 0
+    @objc dynamic var total_supply = 0
+    @objc dynamic var percent_change_1h = ""
+    @objc dynamic var percent_change_24h = ""
+    @objc dynamic var percent_change_7d = ""
+    @objc dynamic var created_at = ""
+    @objc dynamic var updated_at = ""
     
-    enum CodingKeys: String, CodingKey {
-        case id
-        case name
-        case symbol
-        //var logo: Any //TODO: Know type?
-        case rank
-        case price_usd
-        case price_btc
-        case volume_usd = "24h_volume_usd"
-        case market_cap_usd
-        case available_supply
-        case total_supply
-        case percent_change_1h
-        case percent_change_24h
-        case percent_change_7d
-        case created_at
-        case updated_at
+    override static func primaryKey() -> String? {
+        return "id"
+    }
+    
+    convenience init(json: Dictionary<String, Any>) {
+        self.init()
+        self.id = json["id"] as? Int ?? 0
+        self.name = json["name"] as? String ?? "Not available"
+        self.symbol = json["symbol"] as? String ?? "Not available"
+        self.rank = json["rank"] as? Int ?? 0
+        self.price_usd = json["price_usd"] as? String ?? "Not available"
+        self.price_btc = json["price_btc"] as? String ?? "Not available"
+        self.volume_usd = json["24h_volume_usd"] as? Int ?? 0
+        self.market_cap_usd = json["market_cap_usd"] as? Int ?? 0
+        self.available_supply = json["available_supply"] as? Int ?? 0
+        self.total_supply = json["total_supply"] as? Int ?? 0
+        self.percent_change_1h = json["percent_change_1h"] as? String ?? "Not available"
+        self.percent_change_24h = json["percent_change_24h"] as? String ?? "Not available"
+        self.percent_change_7d = json["percent_change_7d"] as? String ?? "Not available"
+        self.created_at = json["created_at"] as? String ?? "Not available"
+        self.updated_at = json["updated_at"] as? String ?? "Not available"
+    }
+    
+    
+    static func fetchCoins(realm: Realm) -> Results<Coin>{
+        return realm.objects(Coin.self).sorted(byKeyPath: "id")
     }
 }

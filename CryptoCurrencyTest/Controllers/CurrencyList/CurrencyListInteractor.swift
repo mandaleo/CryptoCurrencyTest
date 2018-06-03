@@ -14,11 +14,22 @@ class CurrencyListInteractor {
     //MARK: - Variables
     var delegate: InteractorObserverProtocol?
     fileprivate var database: Realm!
+    var listResults: Results<Coin>!
     
     //MARK: - Initialization and configuration
     init(withDatabase database: Realm) {
         self.database = database
-        _ = ListCoinsWorker(withPage: 1){ (coins: [Coin]) in 
+        listResults = Coin.fetchCoins(realm: database)
+        if (listResults != nil) && listResults.count > 0 {
+           delegate?.interactorDidChange()
+        }else {
+            moreCoins(nextPage: 1)
+        }
+    }
+    
+    func moreCoins(nextPage: Int){
+        _ = ListCoinsWorker(withDatabase: database, page: nextPage){
+            self.listResults = Coin.fetchCoins(realm: self.database)
             self.delegate?.interactorDidChange()
         }
     }

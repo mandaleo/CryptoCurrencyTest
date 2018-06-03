@@ -12,16 +12,20 @@ class CurrencyListPresenter: InteractorObserverProtocol {
     
     //MARK: - Variables
     fileprivate weak var view: CurrencyListView!
+    fileprivate weak var interactor: CurrencyListInteractor?
     
     
     //MARK: - Initialization and configuration
     init(container: CurrencyListView, interactor: CurrencyListInteractor?) {
         self.view = container
-        interactor?.delegate = self //TODO: - Make independent or use RxSwift
+        self.interactor = interactor
+        self.interactor?.delegate = self //TODO: - Make independent or use RxSwift
     }
     
     //MARK: - InteractorObserverProtocol
     func interactorDidChange() {
         print("interactor change")
+        let aux = self.interactor?.listResults
+        print(aux)
     }
 }

@@ -8,26 +8,25 @@
 
 import Foundation
 import Alamofire
+import RealmSwift
 
 class ListCoinsWorker {
     
-    init(withPage page: Int, completion:@escaping ([Coin])-> ()) {
+    init(withDatabase realm: Realm, page: Int, completion:@escaping () -> ()){
         let params: Parameters   = ["page": page];
         let headers: HTTPHeaders = [
             "Accept": "application/json"
         ]
         APIClient().makeRequest(method: .get, endPoint: "/coins", params: params, headers: headers){ (maybeJson: Dictionary<String, Any>?) in
-            var coins = [Coin]()
             if let json = maybeJson, let coinsData = json["coins"] as? Dictionary<String, Any>, let data = coinsData["data"] as? [Dictionary<String, Any>] {
-                let jsonDecoder = JSONDecoder()
                 for currency in data {
-                    if let currencyData = try? JSONSerialization.data(withJSONObject: currency) {
-                        let coin = try! jsonDecoder.decode(Coin.self, from: currencyData)
-                        coins.append(coin)
+                    let coin = Coin(json: currency)
+                    try! realm.write {
+                        realm.add(coin)
                     }
                 }
             }
-            completion(coins)
+            completion()
         }
     }
 }
