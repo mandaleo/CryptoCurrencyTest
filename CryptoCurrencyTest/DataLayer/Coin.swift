@@ -17,10 +17,10 @@ class Coin: Object {
     @objc dynamic var rank = 0
     @objc dynamic var price_usd = ""
     @objc dynamic var price_btc = ""
-    @objc dynamic var volume_usd = 0
-    @objc dynamic var market_cap_usd = 0
-    @objc dynamic var available_supply = 0
-    @objc dynamic var total_supply = 0
+    @objc dynamic var volume_usd = 0.0
+    @objc dynamic var market_cap_usd = 0.0
+    @objc dynamic var available_supply = 0.0
+    @objc dynamic var total_supply = 0.0
     @objc dynamic var percent_change_1h = ""
     @objc dynamic var percent_change_24h = ""
     @objc dynamic var percent_change_7d = ""
@@ -39,10 +39,10 @@ class Coin: Object {
         self.rank = json["rank"] as? Int ?? 0
         self.price_usd = json["price_usd"] as? String ?? "Not available"
         self.price_btc = json["price_btc"] as? String ?? "Not available"
-        self.volume_usd = json["24h_volume_usd"] as? Int ?? 0
-        self.market_cap_usd = json["market_cap_usd"] as? Int ?? 0
-        self.available_supply = json["available_supply"] as? Int ?? 0
-        self.total_supply = json["total_supply"] as? Int ?? 0
+        self.volume_usd = json["24h_volume_usd"] as? Double ?? 0.0
+        self.market_cap_usd = json["market_cap_usd"] as? Double ?? 0.0
+        self.available_supply = json["available_supply"] as? Double ?? 0.0
+        self.total_supply = json["total_supply"] as? Double ?? 0.0
         self.percent_change_1h = json["percent_change_1h"] as? String ?? "Not available"
         self.percent_change_24h = json["percent_change_24h"] as? String ?? "Not available"
         self.percent_change_7d = json["percent_change_7d"] as? String ?? "Not available"
@@ -53,5 +53,9 @@ class Coin: Object {
     
     static func fetchCoins(realm: Realm) -> Results<Coin>{
         return realm.objects(Coin.self).sorted(byKeyPath: "id")
+    }
+    
+    static func fetchCoins(realm: Realm, id: Int) -> Coin? {
+        return fetchCoins(realm: realm).filter("id == \(id)").first
     }
 }

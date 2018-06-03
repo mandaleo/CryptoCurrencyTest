@@ -27,7 +27,7 @@ class CurrencyListPresenter: InteractorObserverProtocol {
 
         var currencyItemsVM = [CurrencyViewModel]()
         for coin in listResults {
-            let currencyVM = CurrencyViewModel(id: coin.id, name: coin.name, priceUSD: coin.price_usd, priceBTC: coin.price_btc, percentageLastHour: coin.percent_change_1h, percentageLastDay: coin.percent_change_24h, percentageLastWeek: coin.percent_change_7d)
+            let currencyVM = CurrencyViewModel(id: coin.id, name: coin.name, symbol: coin.symbol, rank: coin.rank, priceUSD: coin.price_usd, priceBTC: coin.price_btc, volumeUSD: coin.volume_usd, marketCapUSD: coin.market_cap_usd, availableSupply: coin.available_supply, totalSupply: coin.total_supply, percentageLastHour: coin.percent_change_1h, percentageLastDay: coin.percent_change_24h, percentageLastWeek: coin.percent_change_7d, createdISO: coin.created_at, updatedISO: coin.updated_at)
             currencyItemsVM.append(currencyVM)
         }
         return CurrencyListViewModel(currentPage: 1, lastPage: 4, currencyList: currencyItemsVM)
@@ -36,6 +36,7 @@ class CurrencyListPresenter: InteractorObserverProtocol {
     
     //MARK: - InteractorObserverProtocol
     func interactorDidChange() {
-        //let newViewModel = buildViewModel()
+        guard let newViewModel = buildViewModel() else {return}
+        self.view.presentViewModel(vm: newViewModel)
     }
 }

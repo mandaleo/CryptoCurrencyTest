@@ -18,11 +18,18 @@ class ListCoinsWorker {
             "Accept": "application/json"
         ]
         APIClient().makeRequest(method: .get, endPoint: "/coins", params: params, headers: headers){ (maybeJson: Dictionary<String, Any>?) in
-            if let json = maybeJson, let coinsData = json["coins"] as? Dictionary<String, Any>, let data = coinsData["data"] as? [Dictionary<String, Any>] {
-                for currency in data {
-                    let coin = Coin(json: currency)
-                    try! realm.write {
-                        realm.add(coin)
+            if let json = maybeJson, let coinsData = json["coins"] as? Dictionary<String, Any>{
+                if let lastPage = coinsData["last_page"] as? Int {
+                    UserDefaults.standard.saveFinalPage(finalPage: lastPage)
+                }
+                if let data = coinsData["data"] as? [Dictionary<String, Any>] {
+                    for currency in data {
+                        let coin = Coin(json: currency)
+                        if !(Coin.fetchCoins(realm: realm, id: coin.id) != nil) {
+                            try! realm.write {
+                                realm.add(coin)
+                            }
+                        }
                     }
                 }
             }

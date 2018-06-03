@@ -35,5 +35,6 @@ class CurrencyListVC: UIViewController {
     func setupVIP() {
         interactor = CurrencyListInteractor(withDatabase: realm)
         presenter = CurrencyListPresenter(container: currencyListview, interactor: interactor)
+        presenter?.interactorDidChange()
     }
 }

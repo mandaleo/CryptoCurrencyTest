@@ -20,8 +20,23 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT" customClass="CurrencyListView" customModule="CryptoCurrencyTest" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="c1s-RD-FrS">
+                    <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="c1s-RD-FrS" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="4pi-2f-Nzz"/>
+                <constraint firstItem="c1s-RD-FrS" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Hgp-Vt-gBV"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="c1s-RD-FrS" secondAttribute="trailing" id="hG5-ia-DYe"/>
+                <constraint firstAttribute="bottom" secondItem="c1s-RD-FrS" secondAttribute="bottom" id="wSV-8P-ncn"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <connections>
+                <outlet property="tableView" destination="c1s-RD-FrS" id="Vuh-Zg-4pW"/>
+            </connections>
         </view>
     </objects>
 </document>

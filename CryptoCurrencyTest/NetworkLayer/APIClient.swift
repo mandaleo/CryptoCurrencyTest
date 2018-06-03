@@ -17,6 +17,7 @@ class APIClient {
         guard let url = URL(string: baseURL + endPoint) else {
             return
         }
+        print(url)
         Alamofire.request(url, method: method, parameters: params, encoding: URLEncoding.default, headers: headers).responseJSON { response in
             if let json = response.result.value as? Dictionary<String, Any>{
                 completion(json)
