@@ -11,22 +11,23 @@ import Alamofire
 
 class ListCoinsWorker {
     
-    init(withPage page: Int, completion:@escaping ()-> ()) {
+    init(withPage page: Int, completion:@escaping ([Coin])-> ()) {
         let params: Parameters   = ["page": page];
         let headers: HTTPHeaders = [
             "Accept": "application/json"
         ]
         APIClient().makeRequest(method: .get, endPoint: "/coins", params: params, headers: headers){ (maybeJson: Dictionary<String, Any>?) in
-            if let json = maybeJson, let coins = json["coins"] as? Dictionary<String, Any>, let data = coins["data"] as? [Dictionary<String, Any>] {
+            var coins = [Coin]()
+            if let json = maybeJson, let coinsData = json["coins"] as? Dictionary<String, Any>, let data = coinsData["data"] as? [Dictionary<String, Any>] {
                 let jsonDecoder = JSONDecoder()
                 for currency in data {
                     if let currencyData = try? JSONSerialization.data(withJSONObject: currency) {
                         let coin = try! jsonDecoder.decode(Coin.self, from: currencyData)
-                        print(coin)
+                        coins.append(coin)
                     }
                 }
             }
-            completion()
+            completion(coins)
         }
     }
 }

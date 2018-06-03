@@ -7,14 +7,18 @@
 //
 
 import Foundation
+import RealmSwift
 
 class CurrencyListInteractor {
     
+    //MARK: - Variables
     var delegate: InteractorObserverProtocol?
+    fileprivate var database: Realm!
     
     //MARK: - Initialization and configuration
-    init() {
-        _ = ListCoinsWorker(withPage: 1){
+    init(withDatabase database: Realm) {
+        self.database = database
+        _ = ListCoinsWorker(withPage: 1){ (coins: [Coin]) in 
             self.delegate?.interactorDidChange()
         }
     }

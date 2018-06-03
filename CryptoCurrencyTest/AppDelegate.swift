@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -31,7 +32,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     ///
     /// - Returns: Return the first View Controller of the app
     func setupInitialViewController() -> UIViewController{
+        let realm = try! Realm()
         let currencyListVC = CurrencyListVC()
+        currencyListVC.configure(withDatabase: realm)
         let navigationVC = UINavigationController(rootViewController: currencyListVC)
         return navigationVC
     }

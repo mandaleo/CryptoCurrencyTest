@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class CurrencyListVC: UIViewController {
     
@@ -14,11 +15,14 @@ class CurrencyListVC: UIViewController {
     @IBOutlet var currencyListview: CurrencyListView!
     
     //MARK: - Variables
+    var realm: Realm!
     var presenter:  CurrencyListPresenter?
     var interactor: CurrencyListInteractor?
     
     //MARK: - Initialization and configuration
-    //func configure(with dataBase: )
+    func configure(withDatabase dataBase: Realm) {
+        realm = dataBase
+    }
     
     //MARK: - LifeCycle
     override func viewDidLoad() {
@@ -29,7 +33,7 @@ class CurrencyListVC: UIViewController {
     
     /// Default method to init VIP cycle
     func setupVIP() {
-        interactor = CurrencyListInteractor()
+        interactor = CurrencyListInteractor(withDatabase: realm)
         presenter = CurrencyListPresenter(container: currencyListview, interactor: interactor)
     }
 }
