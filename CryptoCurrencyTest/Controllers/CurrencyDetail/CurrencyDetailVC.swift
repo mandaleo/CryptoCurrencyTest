@@ -41,5 +41,11 @@ class CurrencyDetailVC: UIViewController {
     
     func setupTopBar(){
         self.title = viewModel.name
+        let addTradeButton = UIBarButtonItem(title: "Add Trade", style: .plain, target: self, action: #selector(addTradeButtonTapped))
+        self.navigationItem.rightBarButtonItem = addTradeButton
+    }
+    
+    @objc func addTradeButtonTapped() {
+        print("new trade")
     }
 }
