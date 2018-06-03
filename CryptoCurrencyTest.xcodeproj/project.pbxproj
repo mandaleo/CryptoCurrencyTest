@@ -19,6 +19,7 @@
 		D92268CA20C40CD9001A1ACF /* CurrencyListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92268C920C40CD9001A1ACF /* CurrencyListViewModel.swift */; };
 		D92268CE20C4103B001A1ACF /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92268CD20C4103B001A1ACF /* APIClient.swift */; };
 		D92268D020C413AE001A1ACF /* ListCoinsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92268CF20C413AE001A1ACF /* ListCoinsWorker.swift */; };
+		D92268D320C423A3001A1ACF /* InteractorObserverProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92268D220C423A3001A1ACF /* InteractorObserverProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		D92268C920C40CD9001A1ACF /* CurrencyListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyListViewModel.swift; sourceTree = "<group>"; };
 		D92268CD20C4103B001A1ACF /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		D92268CF20C413AE001A1ACF /* ListCoinsWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCoinsWorker.swift; sourceTree = "<group>"; };
+		D92268D220C423A3001A1ACF /* InteractorObserverProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractorObserverProtocol.swift; sourceTree = "<group>"; };
 		E5617E1ADEFE1D2EDBCA6B59 /* Pods_CryptoCurrencyTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CryptoCurrencyTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -104,6 +106,7 @@
 		D92268BD20C40AA2001A1ACF /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				D92268D220C423A3001A1ACF /* InteractorObserverProtocol.swift */,
 				D92268BE20C40AC5001A1ACF /* CurrencyList */,
 			);
 			path = Controllers;
@@ -258,6 +261,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D92268D320C423A3001A1ACF /* InteractorObserverProtocol.swift in Sources */,
 				D92268AB20C40804001A1ACF /* AppDelegate.swift in Sources */,
 				D92268CE20C4103B001A1ACF /* APIClient.swift in Sources */,
 				D92268D020C413AE001A1ACF /* ListCoinsWorker.swift in Sources */,

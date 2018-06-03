@@ -11,11 +11,11 @@ import Alamofire
 
 class ListCoinsWorker {
     
-    init(withPage page: Int) {
+    init(withPage page: Int, completion:@escaping ()-> ()) {
         let params: Parameters   = ["page": page];
         let headers: HTTPHeaders = [
             "Accept": "application/json"
         ]
-        APIClient().makeRequest(method: .get, endPoint: "/coins", params: params, headers: headers)
+        APIClient().makeRequest(method: .get, endPoint: "/coins", params: params, headers: headers, completion: completion)
     }
 }

@@ -30,6 +30,6 @@ class CurrencyListVC: UIViewController {
     /// Default method to init VIP cycle
     func setupVIP() {
         interactor = CurrencyListInteractor()
-        presenter = CurrencyListPresenter(container: currencyListview)
+        presenter = CurrencyListPresenter(container: currencyListview, interactor: interactor)
     }
 }

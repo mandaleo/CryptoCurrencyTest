@@ -8,11 +8,20 @@
 
 import UIKit
 
-class CurrencyListPresenter {
+class CurrencyListPresenter: InteractorObserverProtocol {
     
+    //MARK: - Variables
     fileprivate weak var view: CurrencyListView!
     
-    init(container: CurrencyListView) {
+    
+    //MARK: - Initialization and configuration
+    init(container: CurrencyListView, interactor: CurrencyListInteractor?) {
         self.view = container
+        interactor?.delegate = self //TODO: - Make independent or use RxSwift
+    }
+    
+    //MARK: - InteractorObserverProtocol
+    func interactorDidChange() {
+        print("interactor change")
     }
 }
