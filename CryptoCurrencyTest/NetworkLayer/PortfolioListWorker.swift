@@ -20,8 +20,15 @@ class PortfolioListWorker {
             "Authorization": "Basic \(base64Credentials)"
         ]
         APIClient().makeRequest(method: .get, endPoint: "/portfolio", params: nil, headers: headers, success: { (maybeJson: Dictionary<String, Any>?) in
-            if let json = maybeJson, let coinsDictArray = json["coins"] as? [Dictionary<String, Any>]{
-               print(coinsDictArray)
+            if let json = maybeJson, let tradeDictArray = json["coins"] as? [Dictionary<String, Any>]{
+                for tradeDict in tradeDictArray {
+                    let trade = Trade(json: tradeDict, database: realm)
+                    if !Trade.existTrade(realm: realm, otherTrade: trade) {
+                        try! realm.write {
+                            realm.add(trade)
+                        }
+                    }
+                }
             }
             success()
         },

@@ -42,6 +42,8 @@
 		D93EFA9720C5D17E00175C85 /* PortfolioInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93EFA9620C5D17E00175C85 /* PortfolioInteractor.swift */; };
 		D93EFA9920C5D18F00175C85 /* PortfolioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93EFA9820C5D18F00175C85 /* PortfolioView.swift */; };
 		D93EFA9B20C5D5E200175C85 /* PortfolioListWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93EFA9A20C5D5E200175C85 /* PortfolioListWorker.swift */; };
+		D93EFA9D20C5DFD500175C85 /* Trade.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93EFA9C20C5DFD500175C85 /* Trade.swift */; };
+		D93EFA9F20C5E40F00175C85 /* CoinWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93EFA9E20C5E40F00175C85 /* CoinWorker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,6 +85,8 @@
 		D93EFA9620C5D17E00175C85 /* PortfolioInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioInteractor.swift; sourceTree = "<group>"; };
 		D93EFA9820C5D18F00175C85 /* PortfolioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioView.swift; sourceTree = "<group>"; };
 		D93EFA9A20C5D5E200175C85 /* PortfolioListWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioListWorker.swift; sourceTree = "<group>"; };
+		D93EFA9C20C5DFD500175C85 /* Trade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trade.swift; sourceTree = "<group>"; };
+		D93EFA9E20C5E40F00175C85 /* CoinWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinWorker.swift; sourceTree = "<group>"; };
 		E5617E1ADEFE1D2EDBCA6B59 /* Pods_CryptoCurrencyTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CryptoCurrencyTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -180,6 +184,7 @@
 				D92268CF20C413AE001A1ACF /* ListCoinsWorker.swift */,
 				D93599FE20C5BFFF00237C51 /* NewTradeWorker.swift */,
 				D93EFA9A20C5D5E200175C85 /* PortfolioListWorker.swift */,
+				D93EFA9E20C5E40F00175C85 /* CoinWorker.swift */,
 			);
 			path = NetworkLayer;
 			sourceTree = "<group>";
@@ -188,6 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				D92268D420C42673001A1ACF /* Coin.swift */,
+				D93EFA9C20C5DFD500175C85 /* Trade.swift */,
 			);
 			path = DataLayer;
 			sourceTree = "<group>";
@@ -405,6 +411,8 @@
 				D92268D020C413AE001A1ACF /* ListCoinsWorker.swift in Sources */,
 				D92268CA20C40CD9001A1ACF /* CurrencyListViewModel.swift in Sources */,
 				D93599F920C489C900237C51 /* CurrencyDetailPresenter.swift in Sources */,
+				D93EFA9F20C5E40F00175C85 /* CoinWorker.swift in Sources */,
+				D93EFA9D20C5DFD500175C85 /* Trade.swift in Sources */,
 				D93599FB20C489D300237C51 /* CurrencyDetailInteractor.swift in Sources */,
 				D92268C620C40BE9001A1ACF /* CurrencyListInteractor.swift in Sources */,
 				D92268C420C40BD8001A1ACF /* CurrencyListPresenter.swift in Sources */,
