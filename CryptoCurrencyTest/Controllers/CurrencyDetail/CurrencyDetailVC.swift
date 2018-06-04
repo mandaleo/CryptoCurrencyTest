@@ -9,7 +9,7 @@
 import UIKit
 import RealmSwift
 
-class CurrencyDetailVC: UIViewController {
+class CurrencyDetailVC: UIViewController, CurrencyDetailViewDelegate {
     
     //MARK: - Outlets
     @IBOutlet var currencyDetailView: CurrencyDetailView!
@@ -37,6 +37,7 @@ class CurrencyDetailVC: UIViewController {
     func setupVIP() {
         interactor = CurrencyDetailInteractor(withDatabase: realm)
         presenter = CurrencyDetailPresenter(container: currencyDetailView, vm: viewModel)
+        presenter?.view.delegate = self
     }
     
     func setupTopBar(){
@@ -47,5 +48,10 @@ class CurrencyDetailVC: UIViewController {
     
     @objc func addTradeButtonTapped() {
         presenter?.view.toggleTradeContainerView(show: true)
+    }
+    
+    //MARK: - CurrencyDetailViewDelegate
+    func didMakeTrade(coindId: Int, amount: Double, priceUSD: Double, notes: String?) {
+        print("Call interactor")
     }
 }

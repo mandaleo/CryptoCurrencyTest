@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol CurrencyDetailViewDelegate {
+    func didMakeTrade(coindId: Int, amount: Double, priceUSD: Double, notes: String?)
+}
+
 class CurrencyDetailView: UIView, UITextFieldDelegate {
     
     //MARK: - Outlets
@@ -29,9 +33,12 @@ class CurrencyDetailView: UIView, UITextFieldDelegate {
     @IBOutlet weak var notesTextView: UITextView!
     @IBOutlet weak var tradeOpaqueView: UIControl!
     @IBOutlet weak var nameCurrencyLabel: UILabel!
+    @IBOutlet weak var makeTradeButton: UIButton!
     
     //MARK: - Variables
     fileprivate var viewModel: CurrencyViewModel?
+    var delegate: CurrencyDetailViewDelegate?
+    fileprivate var amount: Double = 0.0
     
     //MARK: - Initialization and configuration
     override func awakeFromNib() {
@@ -77,13 +84,18 @@ class CurrencyDetailView: UIView, UITextFieldDelegate {
     }
     
     @IBAction func makeTradeButtonTapped(_ sender: Any) {
-        
+        guard let vm = viewModel else {return}
+        delegate?.didMakeTrade(coindId: vm.id, amount: amount, priceUSD: vm.priceUSD, notes: notesTextView.text)
     }
+    
     @IBAction func amountTextFieldValueChanged(_ sender: Any) {
-        guard let amountString = amountTextField.text, let amount = Double(amountString) else {
+        guard let amountString = amountTextField.text, let amountDouble = Double(amountString) else {
+            makeTradeButton.isEnabled = false
             priceCalculatedLabel.text = "0"
             return
         }
+        makeTradeButton.isEnabled = true
+        amount = amountDouble
         let totalPrice = amount * (viewModel?.priceUSD ?? 0)
         priceCalculatedLabel.text = "\(totalPrice)"
     }

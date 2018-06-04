@@ -337,7 +337,7 @@
                                                     </constraints>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kqS-L5-0UZ">
+                                                <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kqS-L5-0UZ">
                                                     <rect key="frame" x="119" y="333" width="105" height="36"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="36" id="53j-3k-943"/>
@@ -433,6 +433,7 @@
                 <outlet property="amountTextField" destination="LwW-eH-jUr" id="Qlv-3Y-zSZ"/>
                 <outlet property="availableSupplyLabel" destination="lRm-yV-Ohr" id="L4l-S7-L7O"/>
                 <outlet property="btcPriceLabel" destination="ZAD-2g-bi6" id="Jie-Gw-Aeu"/>
+                <outlet property="makeTradeButton" destination="kqS-L5-0UZ" id="J6n-Xt-XdP"/>
                 <outlet property="nameCurrencyLabel" destination="4SN-Ab-7nF" id="3yh-zn-ZCD"/>
                 <outlet property="nameLabel" destination="nar-MT-ucx" id="qh9-Nb-sPk"/>
                 <outlet property="notesTextView" destination="PEt-33-FTT" id="aBF-2o-SWl"/>
