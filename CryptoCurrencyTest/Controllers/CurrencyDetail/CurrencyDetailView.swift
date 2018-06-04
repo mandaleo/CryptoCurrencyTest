@@ -102,6 +102,7 @@ class CurrencyDetailView: UIView, UITextFieldDelegate {
     
     //MARK: - Utils
     func toggleTradeContainerView(show: Bool){
+        resetTradeView()
         dismissKeyboard()
         UIView.animate(withDuration: 0.5) {
             self.tradeContainerView.isHidden = !show
@@ -110,6 +111,13 @@ class CurrencyDetailView: UIView, UITextFieldDelegate {
     
     func dismissKeyboard() {
         endEditing(true)
+    }
+    
+    func resetTradeView(){
+        amount = 0.0
+        priceCalculatedLabel.text = "0"
+        notesTextView.text = ""
+        amountTextField.text = ""
     }
     
 }
