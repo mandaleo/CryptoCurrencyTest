@@ -41,6 +41,7 @@
 		D93EFA9520C5D17100175C85 /* PortfolioPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93EFA9420C5D17100175C85 /* PortfolioPresenter.swift */; };
 		D93EFA9720C5D17E00175C85 /* PortfolioInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93EFA9620C5D17E00175C85 /* PortfolioInteractor.swift */; };
 		D93EFA9920C5D18F00175C85 /* PortfolioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93EFA9820C5D18F00175C85 /* PortfolioView.swift */; };
+		D93EFA9B20C5D5E200175C85 /* PortfolioListWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93EFA9A20C5D5E200175C85 /* PortfolioListWorker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,6 +82,7 @@
 		D93EFA9420C5D17100175C85 /* PortfolioPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioPresenter.swift; sourceTree = "<group>"; };
 		D93EFA9620C5D17E00175C85 /* PortfolioInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioInteractor.swift; sourceTree = "<group>"; };
 		D93EFA9820C5D18F00175C85 /* PortfolioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioView.swift; sourceTree = "<group>"; };
+		D93EFA9A20C5D5E200175C85 /* PortfolioListWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioListWorker.swift; sourceTree = "<group>"; };
 		E5617E1ADEFE1D2EDBCA6B59 /* Pods_CryptoCurrencyTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CryptoCurrencyTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -177,6 +179,7 @@
 				D92268CD20C4103B001A1ACF /* APIClient.swift */,
 				D92268CF20C413AE001A1ACF /* ListCoinsWorker.swift */,
 				D93599FE20C5BFFF00237C51 /* NewTradeWorker.swift */,
+				D93EFA9A20C5D5E200175C85 /* PortfolioListWorker.swift */,
 			);
 			path = NetworkLayer;
 			sourceTree = "<group>";
@@ -391,6 +394,7 @@
 				D92268D320C423A3001A1ACF /* InteractorObserverProtocol.swift in Sources */,
 				D93EFA9520C5D17100175C85 /* PortfolioPresenter.swift in Sources */,
 				D93599DE20C4422A00237C51 /* CurrencyViewModel.swift in Sources */,
+				D93EFA9B20C5D5E200175C85 /* PortfolioListWorker.swift in Sources */,
 				D93EFA9220C5D16400175C85 /* PortfolioVC.swift in Sources */,
 				D92268AB20C40804001A1ACF /* AppDelegate.swift in Sources */,
 				D92268CE20C4103B001A1ACF /* APIClient.swift in Sources */,

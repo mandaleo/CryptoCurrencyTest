@@ -17,7 +17,9 @@ class PortfolioInteractor {
     
     //MARK: - Initialization and configuration
     init(withDatabase database: Realm) {
-        self.database = database/*
+        self.database = database
+        retrieve()
+        /*
         listResults = Coin.fetchCoins(realm: database)
         if (listResults != nil) && listResults.count > 0 {
             delegate?.interactorDidChange()
@@ -25,5 +27,14 @@ class PortfolioInteractor {
             moreCoins()
         }
          */
+    }
+    
+    fileprivate func retrieve() {
+        _ = PortfolioListWorker(withDatabase: database, success: {
+            //self.listResults = Coin.fetchCoins(realm: self.database)
+            self.delegate?.interactorDidChange()
+        }, failure: { (err) in
+            print(err)
+        })
     }
 }
