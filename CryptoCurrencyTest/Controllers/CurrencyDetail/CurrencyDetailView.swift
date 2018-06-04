@@ -23,6 +23,9 @@ class CurrencyDetailView: UIView {
     @IBOutlet fileprivate weak var percentageChangeLastHourLabel: UILabel!
     @IBOutlet fileprivate weak var percentageChangeLastDayLabel: UILabel!
     @IBOutlet fileprivate weak var percentageChangeLastWeekLabel: UILabel!
+    @IBOutlet weak var tradeContainerView: UIControl!
+    @IBOutlet weak var priceCalculatedLabel: UILabel!
+    @IBOutlet weak var amountTextField: UITextField!
     
 
     //MARK: - Variables
@@ -48,4 +51,27 @@ class CurrencyDetailView: UIView {
         percentageChangeLastDayLabel.text = "\(vm.percentageLastDay)"
         percentageChangeLastWeekLabel.text = "\(vm.percentageLastWeek)"
     }
+    
+    //MARK: - Actions
+    @IBAction func tradeContainerViewTapped(_ sender: Any) {
+        toggleTradeContainerView(show: false)
+    }
+    
+    @IBAction func closeButtonTapped(_ sender: Any) {
+        toggleTradeContainerView(show: false)
+    }
+    
+    @IBAction func makeTradeButtonTapped(_ sender: Any) {
+        
+    }
+    @IBAction func amountTextFieldValueChanged(_ sender: Any) {
+    }
+    
+    //MARK: - Utils
+    func toggleTradeContainerView(show: Bool){
+        UIView.animate(withDuration: 0.5) {
+            self.tradeContainerView.isHidden = !show
+        }
+    }
+    
 }

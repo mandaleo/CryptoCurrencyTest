@@ -46,6 +46,6 @@ class CurrencyDetailVC: UIViewController {
     }
     
     @objc func addTradeButtonTapped() {
-        print("new trade")
+        presenter?.view.toggleTradeContainerView(show: true)
     }
 }
