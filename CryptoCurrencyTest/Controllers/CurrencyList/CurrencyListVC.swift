@@ -42,6 +42,8 @@ class CurrencyListVC: UIViewController, CurrencyListDelegate {
     
     func setupTopBar(){
         self.title = "Currency List"
+        let portfolioButton = UIBarButtonItem(title: "Portfolio", style: .plain, target: self, action: #selector(portfolioButtonTapped))
+        self.navigationItem.rightBarButtonItem = portfolioButton
     }
     
     //MARK: - CurrencyListDelegate
@@ -49,5 +51,11 @@ class CurrencyListVC: UIViewController, CurrencyListDelegate {
         let detailCurrencyVC = CurrencyDetailVC()
         detailCurrencyVC.configure(withDatabase: realm, vm: viewModel)
         navigationController?.pushViewController(detailCurrencyVC, animated: true)
+    }
+    
+    @objc func portfolioButtonTapped() {
+        let portfolioVC = PortfolioVC()
+        portfolioVC.configure(withDatabase: realm)
+        navigationController?.pushViewController(portfolioVC, animated: true)
     }
 }
