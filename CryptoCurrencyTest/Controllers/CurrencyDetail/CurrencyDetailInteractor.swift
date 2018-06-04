@@ -18,4 +18,10 @@ class CurrencyDetailInteractor {
     init(withDatabase database: Realm) {
         self.database = database
     }
+    
+    func makeTrade(coindId: Int, amount: Double, priceUSD: Double, notes: String?, completion: @escaping () -> ()) {
+        _ = NewTradeWorker(coindId: coindId, amount: amount, priceUSD: priceUSD, notes: notes) {
+            completion()
+        }
+    }
 }

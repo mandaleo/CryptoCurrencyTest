@@ -19,6 +19,12 @@ class APIClient {
         }
         print(url)
         Alamofire.request(url, method: method, parameters: params, encoding: URLEncoding.default, headers: headers).responseJSON { response in
+            switch response.result {
+                case .success(let json):
+                    print(json)
+                    break
+                case .failure(let error): break
+            }
             if let json = response.result.value as? Dictionary<String, Any>{
                 completion(json)
             }

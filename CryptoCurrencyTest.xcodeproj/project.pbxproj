@@ -34,6 +34,8 @@
 		D93599F920C489C900237C51 /* CurrencyDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93599F820C489C900237C51 /* CurrencyDetailPresenter.swift */; };
 		D93599FB20C489D300237C51 /* CurrencyDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93599FA20C489D300237C51 /* CurrencyDetailInteractor.swift */; };
 		D93599FD20C489EE00237C51 /* CurrencyDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93599FC20C489EE00237C51 /* CurrencyDetailView.swift */; };
+		D93599FF20C5BFFF00237C51 /* NewTradeWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93599FE20C5BFFF00237C51 /* NewTradeWorker.swift */; };
+		D9359A0120C5C10A00237C51 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9359A0020C5C10A00237C51 /* DateExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +69,8 @@
 		D93599F820C489C900237C51 /* CurrencyDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyDetailPresenter.swift; sourceTree = "<group>"; };
 		D93599FA20C489D300237C51 /* CurrencyDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyDetailInteractor.swift; sourceTree = "<group>"; };
 		D93599FC20C489EE00237C51 /* CurrencyDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyDetailView.swift; sourceTree = "<group>"; };
+		D93599FE20C5BFFF00237C51 /* NewTradeWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTradeWorker.swift; sourceTree = "<group>"; };
+		D9359A0020C5C10A00237C51 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		E5617E1ADEFE1D2EDBCA6B59 /* Pods_CryptoCurrencyTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CryptoCurrencyTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -161,6 +165,7 @@
 			children = (
 				D92268CD20C4103B001A1ACF /* APIClient.swift */,
 				D92268CF20C413AE001A1ACF /* ListCoinsWorker.swift */,
+				D93599FE20C5BFFF00237C51 /* NewTradeWorker.swift */,
 			);
 			path = NetworkLayer;
 			sourceTree = "<group>";
@@ -197,6 +202,7 @@
 				D93599E520C4486D00237C51 /* StringExtensions.swift */,
 				D93599E720C44B2100237C51 /* DoubleExtension.swift */,
 				D93599E920C45A3F00237C51 /* UserDefaultsExtension.swift */,
+				D9359A0020C5C10A00237C51 /* DateExtension.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -364,6 +370,7 @@
 				D92268CE20C4103B001A1ACF /* APIClient.swift in Sources */,
 				D93599F220C4642700237C51 /* CurrentListFooterView.swift in Sources */,
 				D93599E220C4467500237C51 /* CurrencyListCell.swift in Sources */,
+				D93599FF20C5BFFF00237C51 /* NewTradeWorker.swift in Sources */,
 				D92268D020C413AE001A1ACF /* ListCoinsWorker.swift in Sources */,
 				D92268CA20C40CD9001A1ACF /* CurrencyListViewModel.swift in Sources */,
 				D93599F920C489C900237C51 /* CurrencyDetailPresenter.swift in Sources */,
@@ -374,6 +381,7 @@
 				D93599EA20C45A3F00237C51 /* UserDefaultsExtension.swift in Sources */,
 				D92268D520C42673001A1ACF /* Coin.swift in Sources */,
 				D93599E620C4486D00237C51 /* StringExtensions.swift in Sources */,
+				D9359A0120C5C10A00237C51 /* DateExtension.swift in Sources */,
 				D93599FD20C489EE00237C51 /* CurrencyDetailView.swift in Sources */,
 				D93599F620C489B300237C51 /* CurrencyDetailVC.swift in Sources */,
 				D93599E820C44B2100237C51 /* DoubleExtension.swift in Sources */,

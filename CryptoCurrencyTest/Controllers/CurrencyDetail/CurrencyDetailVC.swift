@@ -52,6 +52,8 @@ class CurrencyDetailVC: UIViewController, CurrencyDetailViewDelegate {
     
     //MARK: - CurrencyDetailViewDelegate
     func didMakeTrade(coindId: Int, amount: Double, priceUSD: Double, notes: String?) {
-        print("Call interactor")
+        interactor?.makeTrade(coindId: coindId, amount: amount, priceUSD: priceUSD, notes: notes){
+            print("call ok")
+        }
     }
 }
