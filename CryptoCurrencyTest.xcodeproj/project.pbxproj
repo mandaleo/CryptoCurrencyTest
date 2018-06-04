@@ -44,6 +44,8 @@
 		D93EFA9B20C5D5E200175C85 /* PortfolioListWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93EFA9A20C5D5E200175C85 /* PortfolioListWorker.swift */; };
 		D93EFA9D20C5DFD500175C85 /* Trade.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93EFA9C20C5DFD500175C85 /* Trade.swift */; };
 		D93EFA9F20C5E40F00175C85 /* CoinWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93EFA9E20C5E40F00175C85 /* CoinWorker.swift */; };
+		D9404A4620C5ED9100B15CB2 /* TradeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9404A4520C5ED9100B15CB2 /* TradeViewModel.swift */; };
+		D9404A4820C5EEB100B15CB2 /* TradesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9404A4720C5EEB100B15CB2 /* TradesListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -87,6 +89,8 @@
 		D93EFA9A20C5D5E200175C85 /* PortfolioListWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioListWorker.swift; sourceTree = "<group>"; };
 		D93EFA9C20C5DFD500175C85 /* Trade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trade.swift; sourceTree = "<group>"; };
 		D93EFA9E20C5E40F00175C85 /* CoinWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinWorker.swift; sourceTree = "<group>"; };
+		D9404A4520C5ED9100B15CB2 /* TradeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradeViewModel.swift; sourceTree = "<group>"; };
+		D9404A4720C5EEB100B15CB2 /* TradesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradesListViewModel.swift; sourceTree = "<group>"; };
 		E5617E1ADEFE1D2EDBCA6B59 /* Pods_CryptoCurrencyTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CryptoCurrencyTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -203,6 +207,8 @@
 			children = (
 				D93599DD20C4422A00237C51 /* CurrencyViewModel.swift */,
 				D92268C920C40CD9001A1ACF /* CurrencyListViewModel.swift */,
+				D9404A4520C5ED9100B15CB2 /* TradeViewModel.swift */,
+				D9404A4720C5EEB100B15CB2 /* TradesListViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -397,9 +403,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9404A4820C5EEB100B15CB2 /* TradesListViewModel.swift in Sources */,
 				D92268D320C423A3001A1ACF /* InteractorObserverProtocol.swift in Sources */,
 				D93EFA9520C5D17100175C85 /* PortfolioPresenter.swift in Sources */,
 				D93599DE20C4422A00237C51 /* CurrencyViewModel.swift in Sources */,
+				D9404A4620C5ED9100B15CB2 /* TradeViewModel.swift in Sources */,
 				D93EFA9B20C5D5E200175C85 /* PortfolioListWorker.swift in Sources */,
 				D93EFA9220C5D16400175C85 /* PortfolioVC.swift in Sources */,
 				D92268AB20C40804001A1ACF /* AppDelegate.swift in Sources */,
