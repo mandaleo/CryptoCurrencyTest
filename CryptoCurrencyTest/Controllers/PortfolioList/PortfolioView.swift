@@ -13,38 +13,31 @@ protocol PortfolioViewDelegate {
 }
 
 class PortfolioView: UIView {
-    /*
     
     //MARK: - Outlets
 
     //MARK: - Variables
-    fileprivate var viewModel: CurrencyListViewModel?
-    var isLoading = false
-    var delegate: CurrencyListDelegate?
+    fileprivate var viewModel: TradesListViewModel?
+    var delegate: PortfolioViewDelegate?
     
     //MARK: - Initialization and configuration
     override func awakeFromNib() {
         super.awakeFromNib()
-        setupTableView()
+        //setupTableView()
     }
     
-    func setupTableView() {
+    /*func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(CurrencyListCell.nib, forCellReuseIdentifier: CurrencyListCell.cellIdentifier)
         tableView.tableFooterView = footerView()
-    }
+    }*/
     
-    func presentViewModel(vm: CurrencyListViewModel) {
-        isLoading = false
+    func presentViewModel(vm: TradesListViewModel) {
         viewModel = vm
-        if UserDefaults.standard.getCurrentPage() == UserDefaults.standard.getFinalPage() {
-            isLoading = true
-            tableView.tableFooterView = UIView()
-        }
-        tableView.reloadData()
+        //tableView.reloadData()
     }
-    
+   /*
     //MARK : - UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel?.currencyList.count ?? 0
@@ -64,6 +57,5 @@ class PortfolioView: UIView {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let vm = viewModel?.currencyList[indexPath.row] else {return}
         delegate?.didSelectRow(viewModel: vm)
-    }
-    */
+    }*/
 }

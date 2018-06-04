@@ -14,8 +14,10 @@ struct TradesListViewModel {
     
     init(tradesList: [TradeViewModel]) {
         self.tradesList = tradesList
+        var total = 0.0
         for trade in tradesList {
-            self.totalPriceUSD += trade.priceUSD
+            total += trade.priceUSD
         }
+        self.totalPriceUSD = total.rounded(toPlaces: 2)
     }
 }

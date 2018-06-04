@@ -13,25 +13,19 @@ class PortfolioInteractor {
     //MARK: - Variables
     var delegate: InteractorObserverProtocol?
     fileprivate var database: Realm!
-    //var listResults: Results<Coin>!
+    var listResults: Results<Trade>!
     
     //MARK: - Initialization and configuration
     init(withDatabase database: Realm) {
         self.database = database
+        self.listResults = Trade.fetchTrades(realm: self.database)
+        delegate?.interactorDidChange()
         retrieve()
-        /*
-        listResults = Coin.fetchCoins(realm: database)
-        if (listResults != nil) && listResults.count > 0 {
-            delegate?.interactorDidChange()
-        }else {
-            moreCoins()
-        }
-         */
     }
     
     fileprivate func retrieve() {
         _ = PortfolioListWorker(withDatabase: database, success: {
-            //self.listResults = Coin.fetchCoins(realm: self.database)
+            self.listResults = Trade.fetchTrades(realm: self.database)
             self.delegate?.interactorDidChange()
         }, failure: { (err) in
             print(err)
