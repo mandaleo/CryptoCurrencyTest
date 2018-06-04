@@ -29,5 +29,10 @@ extension UserDefaults {
         UserDefaults.standard.set(nextPage, forKey: "getNextPage")
         return nextPage
     }
+    
+    func setPreviousPage(){
+        let nextPage = UserDefaults.standard.integer(forKey: "getNextPage") - 1
+        UserDefaults.standard.set(nextPage, forKey: "getNextPage")
+    }
 }
 

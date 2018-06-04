@@ -13,7 +13,7 @@ class APIClient {
     
     private let baseURL = "https://test.cryptojet.io"
     
-    func makeRequest(method: HTTPMethod, endPoint: String, params: Parameters?, headers: HTTPHeaders?, completion:@escaping (Dictionary<String, Any>?)-> ()){
+    func makeRequest(method: HTTPMethod, endPoint: String, params: Parameters?, headers: HTTPHeaders?, success:@escaping (Dictionary<String, Any>?)-> (), failure:@escaping (Error)-> ()){
         guard let url = URL(string: baseURL + endPoint) else {
             return
         }
@@ -21,12 +21,15 @@ class APIClient {
         Alamofire.request(url, method: method, parameters: params, encoding: URLEncoding.default, headers: headers).responseJSON { response in
             switch response.result {
                 case .success(let json):
-                    print(json)
+                    if let dict = json as? Dictionary<String, Any> {
+                        success(dict)
+                    }else {
+                        failure(NSError())
+                    }
                     break
-                case .failure(let error): break
-            }
-            if let json = response.result.value as? Dictionary<String, Any>{
-                completion(json)
+                case .failure(let error):
+                    failure(error)
+                    break
             }
         }
     }

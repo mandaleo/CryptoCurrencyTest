@@ -52,8 +52,21 @@ class CurrencyDetailVC: UIViewController, CurrencyDetailViewDelegate {
     
     //MARK: - CurrencyDetailViewDelegate
     func didMakeTrade(coindId: Int, amount: Double, priceUSD: Double, notes: String?) {
-        interactor?.makeTrade(coindId: coindId, amount: amount, priceUSD: priceUSD, notes: notes){
+        interactor?.makeTrade(coindId: coindId, amount: amount, priceUSD: priceUSD, notes: notes, success: {
             print("call ok")
-        }
+            self.presenter?.view.toggleTradeContainerView(show: false)
+            self.makeTradeAlert(success: true)
+        }, failure: { (err) in
+            print(err)
+            self.makeTradeAlert(success: false)
+        })
+    }
+    
+    func makeTradeAlert(success: Bool) {
+        let title = "Add New Trade"
+        let message = (success) ? "Transaction OK" : "Transaction Failure"
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(alert, animated: true, completion: nil)
     }
 }

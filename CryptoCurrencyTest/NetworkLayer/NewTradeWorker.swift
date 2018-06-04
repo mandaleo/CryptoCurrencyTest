@@ -11,7 +11,7 @@ import Alamofire
 
 class NewTradeWorker {
     
-    init(coindId: Int, amount: Double, priceUSD: Double, notes: String?, completion: @escaping () -> ()) {
+    init(coindId: Int, amount: Double, priceUSD: Double, notes: String?, success: @escaping () -> (), failure:@escaping (Error)-> ()) {
         let credentialData = "richard@rich.com:secret".data(using: String.Encoding.utf8)!
         let base64Credentials = credentialData.base64EncodedString()
         let headers: HTTPHeaders = [
@@ -28,8 +28,13 @@ class NewTradeWorker {
             params["notes"] = notes
         }
         
-        APIClient().makeRequest(method: .post, endPoint: "/portfolio", params: params, headers: headers) { (maybeJson: Dictionary<String, Any>?) in
-            completion()
-        }
+        APIClient().makeRequest(method: .post, endPoint: "/portfolio", params: params, headers: headers,
+                                success: { (maybeJson: Dictionary<String, Any>?) in
+                                    success()
+            },
+                                failure: { (err: Error) in
+                                    failure(err)
+            }
+        )
     }
 }

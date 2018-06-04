@@ -19,9 +19,11 @@ class CurrencyDetailInteractor {
         self.database = database
     }
     
-    func makeTrade(coindId: Int, amount: Double, priceUSD: Double, notes: String?, completion: @escaping () -> ()) {
-        _ = NewTradeWorker(coindId: coindId, amount: amount, priceUSD: priceUSD, notes: notes) {
-            completion()
+    func makeTrade(coindId: Int, amount: Double, priceUSD: Double, notes: String?, success: @escaping () -> (), failure:@escaping (Error)-> ()) {
+        _ = NewTradeWorker(coindId: coindId, amount: amount, priceUSD: priceUSD, notes: notes, success: {
+            success()
+        }) { (err) in
+            failure(err)
         }
     }
 }

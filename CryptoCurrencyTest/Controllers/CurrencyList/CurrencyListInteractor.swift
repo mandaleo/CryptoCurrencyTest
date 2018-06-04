@@ -36,10 +36,12 @@ class CurrencyListInteractor {
         let nextPage = UserDefaults.standard.getNextPage()
         let finalPage = UserDefaults.standard.getFinalPage()
         if nextPage <= finalPage || finalPage == 0 {
-            _ = ListCoinsWorker(withDatabase: database, page: nextPage){
+            _ = ListCoinsWorker(withDatabase: database, page: nextPage, success: {
                 self.listResults = Coin.fetchCoins(realm: self.database)
                 self.delegate?.interactorDidChange()
-            }
+            }, failure: { (err) in
+                UserDefaults.standard.setPreviousPage()
+            })
         }
     }
 }
