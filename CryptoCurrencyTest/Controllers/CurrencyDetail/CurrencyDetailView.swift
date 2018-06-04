@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CurrencyDetailView: UIView {
+class CurrencyDetailView: UIView, UITextFieldDelegate {
     
     //MARK: - Outlets
     @IBOutlet fileprivate weak var nameLabel: UILabel!
@@ -26,18 +26,29 @@ class CurrencyDetailView: UIView {
     @IBOutlet weak var tradeContainerView: UIControl!
     @IBOutlet weak var priceCalculatedLabel: UILabel!
     @IBOutlet weak var amountTextField: UITextField!
+    @IBOutlet weak var notesTextView: UITextView!
+    @IBOutlet weak var tradeOpaqueView: UIControl!
+    @IBOutlet weak var nameCurrencyLabel: UILabel!
     
-
     //MARK: - Variables
     fileprivate var viewModel: CurrencyViewModel?
     
     //MARK: - Initialization and configuration
     override func awakeFromNib() {
         super.awakeFromNib()
+        amountTextField.delegate = self
+        notesTextViewAppearence()
+    }
+    
+    func notesTextViewAppearence(){
+        notesTextView.layer.cornerRadius = 8
+        notesTextView.layer.borderWidth = 2
+        notesTextView.layer.borderColor = UIColor.lightGray.cgColor
     }
     
     func presentViewModel(vm: CurrencyViewModel) {
         viewModel = vm
+        nameCurrencyLabel.text = vm.name
         nameLabel.text = vm.name
         symbolLabel.text = vm.symbol
         rankLabel.text = "\(vm.rank)"
@@ -57,6 +68,10 @@ class CurrencyDetailView: UIView {
         toggleTradeContainerView(show: false)
     }
     
+    @IBAction func tradeOpaqueViewTapped(_ sender: Any) {
+        dismissKeyboard()
+    }
+    
     @IBAction func closeButtonTapped(_ sender: Any) {
         toggleTradeContainerView(show: false)
     }
@@ -65,13 +80,24 @@ class CurrencyDetailView: UIView {
         
     }
     @IBAction func amountTextFieldValueChanged(_ sender: Any) {
+        guard let amountString = amountTextField.text, let amount = Double(amountString) else {
+            priceCalculatedLabel.text = "0"
+            return
+        }
+        let totalPrice = amount * (viewModel?.priceUSD ?? 0)
+        priceCalculatedLabel.text = "\(totalPrice)"
     }
     
     //MARK: - Utils
     func toggleTradeContainerView(show: Bool){
+        dismissKeyboard()
         UIView.animate(withDuration: 0.5) {
             self.tradeContainerView.isHidden = !show
         }
+    }
+    
+    func dismissKeyboard() {
+        endEditing(true)
     }
     
 }
