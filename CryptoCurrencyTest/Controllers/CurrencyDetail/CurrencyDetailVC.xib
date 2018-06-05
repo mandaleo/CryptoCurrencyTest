@@ -383,6 +383,10 @@
                                         </view>
                                     </subviews>
                                     <color key="backgroundColor" white="0.66666666666666663" alpha="0.76048085387323938" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <accessibility key="accessibilityConfiguration" identifier="tradeContainerView">
+                                        <accessibilityTraits key="traits" staticText="YES"/>
+                                        <bool key="isElement" value="YES"/>
+                                    </accessibility>
                                     <constraints>
                                         <constraint firstItem="hka-wX-MRl" firstAttribute="top" secondItem="d4v-gz-Mdj" secondAttribute="top" constant="50" id="Imp-gh-i0U"/>
                                         <constraint firstItem="hka-wX-MRl" firstAttribute="centerX" secondItem="d4v-gz-Mdj" secondAttribute="centerX" id="USA-K3-Yxa"/>
