@@ -12,7 +12,7 @@ protocol CurrencyDetailViewDelegate {
     func didMakeTrade(coindId: Int, amount: Double, priceUSD: Double, notes: String?)
 }
 
-class CurrencyDetailView: UIView, UITextFieldDelegate {
+class CurrencyDetailView: UIView, UITextFieldDelegate, GetChartData {
     
     //MARK: - Outlets
     @IBOutlet fileprivate weak var nameLabel: UILabel!
@@ -34,6 +34,7 @@ class CurrencyDetailView: UIView, UITextFieldDelegate {
     @IBOutlet weak var tradeOpaqueView: UIControl!
     @IBOutlet weak var nameCurrencyLabel: UILabel!
     @IBOutlet weak var makeTradeButton: UIButton!
+    @IBOutlet weak var chartViewContainer: UIView!
     
     //MARK: - Variables
     fileprivate var viewModel: CurrencyViewModel?
@@ -45,6 +46,8 @@ class CurrencyDetailView: UIView, UITextFieldDelegate {
         super.awakeFromNib()
         amountTextField.delegate = self
         notesTextViewAppearence()
+        populateTable()
+        addLinearChart()
     }
     
     func notesTextViewAppearence(){
@@ -118,6 +121,27 @@ class CurrencyDetailView: UIView, UITextFieldDelegate {
         priceCalculatedLabel.text = "0"
         notesTextView.text = ""
         amountTextField.text = ""
+    }
+    
+    //MARK: - GetChartData Protocol
+    var datePrice: [String] = []
+    var amountPrice: [String] = []
+    
+    func getChartData(with dataPoints: [String], values: [String]) {
+        datePrice = dataPoints
+        amountPrice = values
+    }
+    
+    func addLinearChart() {
+        let lineChart = LineChart(frame: chartViewContainer.frame)
+        lineChart.delegate = self
+        self.addSubview(lineChart)
+    }
+    
+    func populateTable() {
+        datePrice = ["22-01-2018", "23-01-2018", "24-01-2018", "25-01-2018", "26-01-2018"]
+        amountPrice = ["5", "1", "26", "13", "13"]
+        getChartData(with: datePrice, values: amountPrice)
     }
     
 }

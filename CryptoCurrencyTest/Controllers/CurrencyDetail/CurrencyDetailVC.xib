@@ -255,12 +255,12 @@
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xee-2r-Ffe" userLabel="ChartView">
                                     <rect key="frame" x="0.0" y="369.5" width="375" height="300"/>
-                                    <color key="backgroundColor" red="0.0" green="0.99143940210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="300" id="Q9o-bJ-4DV"/>
                                     </constraints>
                                 </view>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d4v-gz-Mdj" customClass="UIControl">
+                                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d4v-gz-Mdj" customClass="UIControl">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="677.5"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hka-wX-MRl" customClass="UIControl">
@@ -335,6 +335,7 @@
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="128" id="ok1-vH-453"/>
                                                     </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
                                                 <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kqS-L5-0UZ">
@@ -433,6 +434,7 @@
                 <outlet property="amountTextField" destination="LwW-eH-jUr" id="Qlv-3Y-zSZ"/>
                 <outlet property="availableSupplyLabel" destination="lRm-yV-Ohr" id="L4l-S7-L7O"/>
                 <outlet property="btcPriceLabel" destination="ZAD-2g-bi6" id="Jie-Gw-Aeu"/>
+                <outlet property="chartViewContainer" destination="Xee-2r-Ffe" id="nMZ-hC-HAp"/>
                 <outlet property="makeTradeButton" destination="kqS-L5-0UZ" id="J6n-Xt-XdP"/>
                 <outlet property="nameCurrencyLabel" destination="4SN-Ab-7nF" id="3yh-zn-ZCD"/>
                 <outlet property="nameLabel" destination="nar-MT-ucx" id="qh9-Nb-sPk"/>

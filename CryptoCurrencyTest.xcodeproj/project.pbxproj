@@ -48,6 +48,9 @@
 		D9404A4820C5EEB100B15CB2 /* TradesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9404A4720C5EEB100B15CB2 /* TradesListViewModel.swift */; };
 		D9404A4C20C7030B00B15CB2 /* PortfolioListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9404A4A20C7030B00B15CB2 /* PortfolioListCell.swift */; };
 		D9404A4D20C7030B00B15CB2 /* PortfolioListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9404A4B20C7030B00B15CB2 /* PortfolioListCell.xib */; };
+		D9404A5020C706C700B15CB2 /* LineChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9404A4F20C706C700B15CB2 /* LineChart.swift */; };
+		D9404A5320C7090200B15CB2 /* GetChartData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9404A5220C7090200B15CB2 /* GetChartData.swift */; };
+		D9404A5520C70E1600B15CB2 /* ChartFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9404A5420C70E1600B15CB2 /* ChartFormatter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -95,6 +98,9 @@
 		D9404A4720C5EEB100B15CB2 /* TradesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradesListViewModel.swift; sourceTree = "<group>"; };
 		D9404A4A20C7030B00B15CB2 /* PortfolioListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioListCell.swift; sourceTree = "<group>"; };
 		D9404A4B20C7030B00B15CB2 /* PortfolioListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PortfolioListCell.xib; sourceTree = "<group>"; };
+		D9404A4F20C706C700B15CB2 /* LineChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineChart.swift; sourceTree = "<group>"; };
+		D9404A5220C7090200B15CB2 /* GetChartData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetChartData.swift; sourceTree = "<group>"; };
+		D9404A5420C70E1600B15CB2 /* ChartFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartFormatter.swift; sourceTree = "<group>"; };
 		E5617E1ADEFE1D2EDBCA6B59 /* Pods_CryptoCurrencyTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CryptoCurrencyTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -140,12 +146,13 @@
 		D92268A920C40804001A1ACF /* CryptoCurrencyTest */ = {
 			isa = PBXGroup;
 			children = (
-				D93599E420C4485F00237C51 /* Utils */,
 				D92268AA20C40804001A1ACF /* AppDelegate.swift */,
 				D92268CB20C40FDA001A1ACF /* NetworkLayer */,
 				D92268CC20C40FE9001A1ACF /* DataLayer */,
 				D93599DC20C4421000237C51 /* ViewModels */,
 				D92268BD20C40AA2001A1ACF /* Controllers */,
+				D9404A4E20C7069A00B15CB2 /* Libraries */,
+				D93599E420C4485F00237C51 /* Utils */,
 				D92268BC20C40A7B001A1ACF /* Resources */,
 				D92268B620C40805001A1ACF /* Info.plist */,
 			);
@@ -289,6 +296,24 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		D9404A4E20C7069A00B15CB2 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				D9404A5120C706DE00B15CB2 /* Charts */,
+			);
+			path = Libraries;
+			sourceTree = "<group>";
+		};
+		D9404A5120C706DE00B15CB2 /* Charts */ = {
+			isa = PBXGroup;
+			children = (
+				D9404A5220C7090200B15CB2 /* GetChartData.swift */,
+				D9404A5420C70E1600B15CB2 /* ChartFormatter.swift */,
+				D9404A4F20C706C700B15CB2 /* LineChart.swift */,
+			);
+			path = Charts;
+			sourceTree = "<group>";
+		};
 		F0C49818D3576CA9B1CEA753 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -379,12 +404,16 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-CryptoCurrencyTest/Pods-CryptoCurrencyTest-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
+				"${BUILT_PRODUCTS_DIR}/ChartsRealm/ChartsRealm.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChartsRealm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 			);
@@ -420,9 +449,11 @@
 			files = (
 				D9404A4820C5EEB100B15CB2 /* TradesListViewModel.swift in Sources */,
 				D92268D320C423A3001A1ACF /* InteractorObserverProtocol.swift in Sources */,
+				D9404A5020C706C700B15CB2 /* LineChart.swift in Sources */,
 				D93EFA9520C5D17100175C85 /* PortfolioPresenter.swift in Sources */,
 				D93599DE20C4422A00237C51 /* CurrencyViewModel.swift in Sources */,
 				D9404A4620C5ED9100B15CB2 /* TradeViewModel.swift in Sources */,
+				D9404A5520C70E1600B15CB2 /* ChartFormatter.swift in Sources */,
 				D93EFA9B20C5D5E200175C85 /* PortfolioListWorker.swift in Sources */,
 				D93EFA9220C5D16400175C85 /* PortfolioVC.swift in Sources */,
 				D92268AB20C40804001A1ACF /* AppDelegate.swift in Sources */,
@@ -448,6 +479,7 @@
 				D93599FD20C489EE00237C51 /* CurrencyDetailView.swift in Sources */,
 				D93599F620C489B300237C51 /* CurrencyDetailVC.swift in Sources */,
 				D93599E820C44B2100237C51 /* DoubleExtension.swift in Sources */,
+				D9404A5320C7090200B15CB2 /* GetChartData.swift in Sources */,
 				D92268C120C40ADB001A1ACF /* CurrencyListVC.swift in Sources */,
 				D93EFA9920C5D18F00175C85 /* PortfolioView.swift in Sources */,
 			);

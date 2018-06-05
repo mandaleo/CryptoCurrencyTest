@@ -8,4 +8,5 @@ target 'CryptoCurrencyTest' do
   # Pods for CryptoCurrencyTest
   pod 'Alamofire'
   pod 'RealmSwift'
+  pod 'ChartsRealm'
 end
