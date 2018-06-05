@@ -34,7 +34,7 @@ class CurrencyDetailView: UIView, UITextFieldDelegate, GetChartData {
     @IBOutlet weak var tradeOpaqueView: UIControl!
     @IBOutlet weak var nameCurrencyLabel: UILabel!
     @IBOutlet weak var makeTradeButton: UIButton!
-    @IBOutlet weak var chartViewContainer: UIView!
+    @IBOutlet weak var chartViewContainer: LineChart!
     
     //MARK: - Variables
     fileprivate var viewModel: CurrencyViewModel?
@@ -46,8 +46,6 @@ class CurrencyDetailView: UIView, UITextFieldDelegate, GetChartData {
         super.awakeFromNib()
         amountTextField.delegate = self
         notesTextViewAppearence()
-        //populateTable()
-        //addLinearChart()
     }
     
     func notesTextViewAppearence(){
@@ -127,18 +125,12 @@ class CurrencyDetailView: UIView, UITextFieldDelegate, GetChartData {
     var datePrice: [String] = []
     var amountPrice: [String] = []
     
-    func addLinearChart() {
-        let lineChart = LineChart(frame: chartViewContainer.frame)
-        lineChart.delegate = self
-        self.addSubview(lineChart)
-    }
-    
     func populateChartData(viewModel: [CurrencyValueViewModel]){
         for vm in viewModel {
             datePrice.append(vm.dateFormatted)
             amountPrice.append(vm.priceUSD)
         }
-        addLinearChart()
+        chartViewContainer.delegate = self
     }
     
 }

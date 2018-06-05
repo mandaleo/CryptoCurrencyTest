@@ -25,7 +25,7 @@
                     <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Zy-3b-DV1">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="677.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="661.5"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r5L-bY-LEq">
                                     <rect key="frame" x="0.0" y="32" width="375" height="305.5"/>
@@ -253,15 +253,15 @@
                                         <constraint firstItem="wlZ-Z8-myV" firstAttribute="top" secondItem="r5L-bY-LEq" secondAttribute="top" id="lPA-dE-rKk"/>
                                     </constraints>
                                 </view>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xee-2r-Ffe" userLabel="ChartView">
-                                    <rect key="frame" x="0.0" y="369.5" width="375" height="300"/>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xee-2r-Ffe" userLabel="ChartView" customClass="LineChart" customModule="CryptoCurrencyTest" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="353.5" width="375" height="300"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="300" id="Q9o-bJ-4DV"/>
                                     </constraints>
                                 </view>
                                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d4v-gz-Mdj" customClass="UIControl">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="677.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="661.5"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hka-wX-MRl" customClass="UIControl">
                                             <rect key="frame" x="16" y="50" width="343" height="389"/>
@@ -408,7 +408,7 @@
                                 <constraint firstItem="r5L-bY-LEq" firstAttribute="leading" secondItem="1Zy-3b-DV1" secondAttribute="leading" id="xNx-Pf-HEL"/>
                                 <constraint firstAttribute="trailing" secondItem="Xee-2r-Ffe" secondAttribute="trailing" id="yal-2J-AG7"/>
                                 <constraint firstItem="r5L-bY-LEq" firstAttribute="top" secondItem="1Zy-3b-DV1" secondAttribute="top" constant="32" id="zEJ-ve-yBr"/>
-                                <constraint firstItem="Xee-2r-Ffe" firstAttribute="top" secondItem="r5L-bY-LEq" secondAttribute="bottom" constant="32" id="zHh-lB-RfR"/>
+                                <constraint firstItem="Xee-2r-Ffe" firstAttribute="top" secondItem="r5L-bY-LEq" secondAttribute="bottom" constant="16" id="zHh-lB-RfR"/>
                             </constraints>
                         </view>
                     </subviews>
