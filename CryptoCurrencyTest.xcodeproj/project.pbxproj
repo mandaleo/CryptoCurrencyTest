@@ -51,6 +51,7 @@
 		D9404A5020C706C700B15CB2 /* LineChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9404A4F20C706C700B15CB2 /* LineChart.swift */; };
 		D9404A5320C7090200B15CB2 /* GetChartData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9404A5220C7090200B15CB2 /* GetChartData.swift */; };
 		D9404A5520C70E1600B15CB2 /* ChartFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9404A5420C70E1600B15CB2 /* ChartFormatter.swift */; };
+		D9404A5720C716A400B15CB2 /* CurrencyValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9404A5620C716A400B15CB2 /* CurrencyValue.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -101,6 +102,7 @@
 		D9404A4F20C706C700B15CB2 /* LineChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineChart.swift; sourceTree = "<group>"; };
 		D9404A5220C7090200B15CB2 /* GetChartData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetChartData.swift; sourceTree = "<group>"; };
 		D9404A5420C70E1600B15CB2 /* ChartFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartFormatter.swift; sourceTree = "<group>"; };
+		D9404A5620C716A400B15CB2 /* CurrencyValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyValue.swift; sourceTree = "<group>"; };
 		E5617E1ADEFE1D2EDBCA6B59 /* Pods_CryptoCurrencyTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CryptoCurrencyTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -209,6 +211,7 @@
 			children = (
 				D92268D420C42673001A1ACF /* Coin.swift */,
 				D93EFA9C20C5DFD500175C85 /* Trade.swift */,
+				D9404A5620C716A400B15CB2 /* CurrencyValue.swift */,
 			);
 			path = DataLayer;
 			sourceTree = "<group>";
@@ -477,6 +480,7 @@
 				D93599E620C4486D00237C51 /* StringExtensions.swift in Sources */,
 				D9359A0120C5C10A00237C51 /* DateExtension.swift in Sources */,
 				D93599FD20C489EE00237C51 /* CurrencyDetailView.swift in Sources */,
+				D9404A5720C716A400B15CB2 /* CurrencyValue.swift in Sources */,
 				D93599F620C489B300237C51 /* CurrencyDetailVC.swift in Sources */,
 				D93599E820C44B2100237C51 /* DoubleExtension.swift in Sources */,
 				D9404A5320C7090200B15CB2 /* GetChartData.swift in Sources */,
