@@ -20,8 +20,44 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT" customClass="PortfolioView" customModule="CryptoCurrencyTest" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <color key="backgroundColor" red="0.57919406890000003" green="0.1280144453" blue="0.57268613580000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ffs-SH-Tc0">
+                    <rect key="frame" x="0.0" y="106" width="375" height="561"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </tableView>
+                <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="01I-eE-eV9">
+                    <rect key="frame" x="115.5" y="40" width="144" height="50"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total USD:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LBh-eg-ooM">
+                            <rect key="frame" x="0.0" y="0.0" width="86" height="50"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KV3-zN-sld">
+                            <rect key="frame" x="94" y="0.0" width="50" height="50"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Ffs-SH-Tc0" secondAttribute="trailing" id="8VE-Lj-5zp"/>
+                <constraint firstItem="01I-eE-eV9" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="CZn-PJ-UdU"/>
+                <constraint firstItem="01I-eE-eV9" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="PJl-bj-dQf"/>
+                <constraint firstItem="Ffs-SH-Tc0" firstAttribute="top" secondItem="01I-eE-eV9" secondAttribute="bottom" constant="16" id="WGo-1m-m6W"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Ffs-SH-Tc0" secondAttribute="bottom" id="ko9-e2-diS"/>
+                <constraint firstItem="Ffs-SH-Tc0" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="lkw-ve-eCk"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <connections>
+                <outlet property="tableview" destination="Ffs-SH-Tc0" id="qkA-dB-0Sh"/>
+                <outlet property="totalUSDLabel" destination="KV3-zN-sld" id="vxS-B7-JsU"/>
+            </connections>
+            <point key="canvasLocation" x="39.5" y="111.5"/>
         </view>
     </objects>
 </document>

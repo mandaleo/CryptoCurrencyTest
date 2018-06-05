@@ -12,10 +12,12 @@ protocol PortfolioViewDelegate {
     //func didSelectRow(viewModel:CurrencyViewModel)
 }
 
-class PortfolioView: UIView {
+class PortfolioView: UIView, UITableViewDelegate, UITableViewDataSource {
     
     //MARK: - Outlets
-
+    @IBOutlet weak var tableview: UITableView!
+    @IBOutlet weak var totalUSDLabel: UILabel!
+    
     //MARK: - Variables
     fileprivate var viewModel: TradesListViewModel?
     var delegate: PortfolioViewDelegate?
@@ -23,39 +25,34 @@ class PortfolioView: UIView {
     //MARK: - Initialization and configuration
     override func awakeFromNib() {
         super.awakeFromNib()
-        //setupTableView()
+        setupTableView()
     }
     
-    /*func setupTableView() {
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.register(CurrencyListCell.nib, forCellReuseIdentifier: CurrencyListCell.cellIdentifier)
-        tableView.tableFooterView = footerView()
-    }*/
+    func setupTableView() {
+        tableview.delegate = self
+        tableview.dataSource = self
+        tableview.register(PortfolioListCell.nib, forCellReuseIdentifier: PortfolioListCell.cellIdentifier)
+        tableview.tableFooterView = UIView()
+    }
     
     func presentViewModel(vm: TradesListViewModel) {
         viewModel = vm
-        //tableView.reloadData()
+        totalUSDLabel.text = "\(vm.totalPriceUSD)"
+        tableview.reloadData()
     }
-   /*
     //MARK : - UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel?.currencyList.count ?? 0
+        return viewModel?.tradesList.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let item = viewModel?.currencyList[indexPath.row]
+        let item = viewModel?.tradesList[indexPath.row]
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: CurrencyListCell.cellIdentifier, for: indexPath) as? CurrencyListCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: PortfolioListCell.cellIdentifier, for: indexPath) as? PortfolioListCell
         
         cell?.presentViewModel(viewModel: item!)
         
         return cell!
     }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let vm = viewModel?.currencyList[indexPath.row] else {return}
-        delegate?.didSelectRow(viewModel: vm)
-    }*/
 }

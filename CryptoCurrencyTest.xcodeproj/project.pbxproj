@@ -46,6 +46,8 @@
 		D93EFA9F20C5E40F00175C85 /* CoinWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93EFA9E20C5E40F00175C85 /* CoinWorker.swift */; };
 		D9404A4620C5ED9100B15CB2 /* TradeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9404A4520C5ED9100B15CB2 /* TradeViewModel.swift */; };
 		D9404A4820C5EEB100B15CB2 /* TradesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9404A4720C5EEB100B15CB2 /* TradesListViewModel.swift */; };
+		D9404A4C20C7030B00B15CB2 /* PortfolioListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9404A4A20C7030B00B15CB2 /* PortfolioListCell.swift */; };
+		D9404A4D20C7030B00B15CB2 /* PortfolioListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9404A4B20C7030B00B15CB2 /* PortfolioListCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -91,6 +93,8 @@
 		D93EFA9E20C5E40F00175C85 /* CoinWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinWorker.swift; sourceTree = "<group>"; };
 		D9404A4520C5ED9100B15CB2 /* TradeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradeViewModel.swift; sourceTree = "<group>"; };
 		D9404A4720C5EEB100B15CB2 /* TradesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradesListViewModel.swift; sourceTree = "<group>"; };
+		D9404A4A20C7030B00B15CB2 /* PortfolioListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioListCell.swift; sourceTree = "<group>"; };
+		D9404A4B20C7030B00B15CB2 /* PortfolioListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PortfolioListCell.xib; sourceTree = "<group>"; };
 		E5617E1ADEFE1D2EDBCA6B59 /* Pods_CryptoCurrencyTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CryptoCurrencyTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -266,6 +270,7 @@
 		D93EFA8F20C5D11700175C85 /* PortfolioList */ = {
 			isa = PBXGroup;
 			children = (
+				D9404A4920C702DF00B15CB2 /* Cells */,
 				D93EFA9020C5D16400175C85 /* PortfolioVC.swift */,
 				D93EFA9420C5D17100175C85 /* PortfolioPresenter.swift */,
 				D93EFA9620C5D17E00175C85 /* PortfolioInteractor.swift */,
@@ -273,6 +278,15 @@
 				D93EFA9120C5D16400175C85 /* PortfolioVC.xib */,
 			);
 			path = PortfolioList;
+			sourceTree = "<group>";
+		};
+		D9404A4920C702DF00B15CB2 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				D9404A4A20C7030B00B15CB2 /* PortfolioListCell.swift */,
+				D9404A4B20C7030B00B15CB2 /* PortfolioListCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		F0C49818D3576CA9B1CEA753 /* Frameworks */ = {
@@ -343,6 +357,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9404A4D20C7030B00B15CB2 /* PortfolioListCell.xib in Resources */,
 				D93599F720C489B300237C51 /* CurrencyDetailVC.xib in Resources */,
 				D93599E320C4467500237C51 /* CurrencyListCell.xib in Resources */,
 				D92268B520C40804001A1ACF /* LaunchScreen.storyboard in Resources */,
@@ -415,6 +430,7 @@
 				D93599F220C4642700237C51 /* CurrentListFooterView.swift in Sources */,
 				D93599E220C4467500237C51 /* CurrencyListCell.swift in Sources */,
 				D93EFA9720C5D17E00175C85 /* PortfolioInteractor.swift in Sources */,
+				D9404A4C20C7030B00B15CB2 /* PortfolioListCell.swift in Sources */,
 				D93599FF20C5BFFF00237C51 /* NewTradeWorker.swift in Sources */,
 				D92268D020C413AE001A1ACF /* ListCoinsWorker.swift in Sources */,
 				D92268CA20C40CD9001A1ACF /* CurrencyListViewModel.swift in Sources */,
@@ -580,7 +596,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.mandaleo.CryptoCurrencyTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -599,7 +615,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.mandaleo.CryptoCurrencyTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

@@ -11,13 +11,13 @@ import UIKit
 class CurrencyListCell: UITableViewCell {
     
     //MARK: - Outlets
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var currentPriceLabel: UILabel!
-    @IBOutlet weak var percentLastHourLabel: UILabel!
-    @IBOutlet weak var percentLastDayLabel: UILabel!
-    @IBOutlet weak var percentLastWeekLabel: UILabel!
+    @IBOutlet fileprivate weak var nameLabel: UILabel!
+    @IBOutlet fileprivate weak var currentPriceLabel: UILabel!
+    @IBOutlet fileprivate weak var percentLastHourLabel: UILabel!
+    @IBOutlet fileprivate weak var percentLastDayLabel: UILabel!
+    @IBOutlet fileprivate weak var percentLastWeekLabel: UILabel!
     
-    //Variables
+    //MARK: - Variables
     static var cellIdentifier: String {
         get {return (String(describing: self))}
     }
