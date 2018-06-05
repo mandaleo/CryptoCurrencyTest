@@ -14,4 +14,13 @@ extension String {
         let doubleString = Double(self) ?? 0.0
         return doubleString.rounded(toPlaces: 2)
     }
+    
+    func isoStringToDateString() -> String {
+        let dateFormatter = ISO8601DateFormatter()
+        dateFormatter.formatOptions = [.withYear, .withMonth, .withDay, .withTime, .withDashSeparatorInDate, .withColonSeparatorInTime]
+        guard let date = dateFormatter.date(from: self) else {
+            return "Unknown"
+        }
+        return "\(String(describing: date))"
+    }
 }

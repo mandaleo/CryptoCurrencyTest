@@ -9,7 +9,6 @@
 import Foundation
 
 protocol GetChartData {
-    func getChartData(with dataPoints: [String], values: [String])
     var datePrice: [String] {get set}
     var amountPrice: [String] {get set}
 }

@@ -35,8 +35,8 @@ class CurrencyDetailVC: UIViewController, CurrencyDetailViewDelegate {
     
     /// Default method to init VIP cycle
     func setupVIP() {
-        interactor = CurrencyDetailInteractor(withDatabase: realm)
-        presenter = CurrencyDetailPresenter(container: currencyDetailView, vm: viewModel)
+        interactor = CurrencyDetailInteractor(withDatabase: realm, coinId: viewModel.id)
+        presenter = CurrencyDetailPresenter(container: currencyDetailView, vm: viewModel, interactor: interactor!)
         presenter?.view.delegate = self
     }
     

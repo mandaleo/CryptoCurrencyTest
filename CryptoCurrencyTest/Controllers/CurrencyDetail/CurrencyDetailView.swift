@@ -46,8 +46,8 @@ class CurrencyDetailView: UIView, UITextFieldDelegate, GetChartData {
         super.awakeFromNib()
         amountTextField.delegate = self
         notesTextViewAppearence()
-        populateTable()
-        addLinearChart()
+        //populateTable()
+        //addLinearChart()
     }
     
     func notesTextViewAppearence(){
@@ -127,21 +127,18 @@ class CurrencyDetailView: UIView, UITextFieldDelegate, GetChartData {
     var datePrice: [String] = []
     var amountPrice: [String] = []
     
-    func getChartData(with dataPoints: [String], values: [String]) {
-        datePrice = dataPoints
-        amountPrice = values
-    }
-    
     func addLinearChart() {
         let lineChart = LineChart(frame: chartViewContainer.frame)
         lineChart.delegate = self
         self.addSubview(lineChart)
     }
     
-    func populateTable() {
-        datePrice = ["22-01-2018", "23-01-2018", "24-01-2018", "25-01-2018", "26-01-2018"]
-        amountPrice = ["5", "1", "26", "13", "13"]
-        getChartData(with: datePrice, values: amountPrice)
+    func populateChartData(viewModel: [CurrencyValueViewModel]){
+        for vm in viewModel {
+            datePrice.append(vm.dateFormatted)
+            amountPrice.append(vm.priceUSD)
+        }
+        addLinearChart()
     }
     
 }

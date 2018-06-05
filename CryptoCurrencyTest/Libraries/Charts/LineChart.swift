@@ -43,7 +43,7 @@ class LineChart: UIView {
         lineChartView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
         
         //Line chart animation
-        lineChartView.animate(xAxisDuration: 2.0, yAxisDuration: 2.0, easingOption: .easeInSine)
+        lineChartView.animate(xAxisDuration: 0.5, yAxisDuration: 0.5, easingOption: .easeInSine)
         
         //line chart population
         setLineChart(dataPoints: datePrice, values: amountPrice)

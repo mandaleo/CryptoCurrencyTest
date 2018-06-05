@@ -52,6 +52,8 @@
 		D9404A5320C7090200B15CB2 /* GetChartData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9404A5220C7090200B15CB2 /* GetChartData.swift */; };
 		D9404A5520C70E1600B15CB2 /* ChartFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9404A5420C70E1600B15CB2 /* ChartFormatter.swift */; };
 		D9404A5720C716A400B15CB2 /* CurrencyValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9404A5620C716A400B15CB2 /* CurrencyValue.swift */; };
+		D9404A5920C7196200B15CB2 /* HistoricalListWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9404A5820C7196200B15CB2 /* HistoricalListWorker.swift */; };
+		D9404A5D20C71C9B00B15CB2 /* CurrencyValueViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9404A5C20C71C9B00B15CB2 /* CurrencyValueViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -103,6 +105,8 @@
 		D9404A5220C7090200B15CB2 /* GetChartData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetChartData.swift; sourceTree = "<group>"; };
 		D9404A5420C70E1600B15CB2 /* ChartFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartFormatter.swift; sourceTree = "<group>"; };
 		D9404A5620C716A400B15CB2 /* CurrencyValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyValue.swift; sourceTree = "<group>"; };
+		D9404A5820C7196200B15CB2 /* HistoricalListWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoricalListWorker.swift; sourceTree = "<group>"; };
+		D9404A5C20C71C9B00B15CB2 /* CurrencyValueViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyValueViewModel.swift; sourceTree = "<group>"; };
 		E5617E1ADEFE1D2EDBCA6B59 /* Pods_CryptoCurrencyTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CryptoCurrencyTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -202,6 +206,7 @@
 				D93599FE20C5BFFF00237C51 /* NewTradeWorker.swift */,
 				D93EFA9A20C5D5E200175C85 /* PortfolioListWorker.swift */,
 				D93EFA9E20C5E40F00175C85 /* CoinWorker.swift */,
+				D9404A5820C7196200B15CB2 /* HistoricalListWorker.swift */,
 			);
 			path = NetworkLayer;
 			sourceTree = "<group>";
@@ -223,6 +228,7 @@
 				D92268C920C40CD9001A1ACF /* CurrencyListViewModel.swift */,
 				D9404A4520C5ED9100B15CB2 /* TradeViewModel.swift */,
 				D9404A4720C5EEB100B15CB2 /* TradesListViewModel.swift */,
+				D9404A5C20C71C9B00B15CB2 /* CurrencyValueViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -457,10 +463,12 @@
 				D93599DE20C4422A00237C51 /* CurrencyViewModel.swift in Sources */,
 				D9404A4620C5ED9100B15CB2 /* TradeViewModel.swift in Sources */,
 				D9404A5520C70E1600B15CB2 /* ChartFormatter.swift in Sources */,
+				D9404A5920C7196200B15CB2 /* HistoricalListWorker.swift in Sources */,
 				D93EFA9B20C5D5E200175C85 /* PortfolioListWorker.swift in Sources */,
 				D93EFA9220C5D16400175C85 /* PortfolioVC.swift in Sources */,
 				D92268AB20C40804001A1ACF /* AppDelegate.swift in Sources */,
 				D92268CE20C4103B001A1ACF /* APIClient.swift in Sources */,
+				D9404A5D20C71C9B00B15CB2 /* CurrencyValueViewModel.swift in Sources */,
 				D93599F220C4642700237C51 /* CurrentListFooterView.swift in Sources */,
 				D93599E220C4467500237C51 /* CurrencyListCell.swift in Sources */,
 				D93EFA9720C5D17E00175C85 /* PortfolioInteractor.swift in Sources */,

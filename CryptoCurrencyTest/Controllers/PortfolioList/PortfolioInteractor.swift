@@ -10,6 +10,7 @@ import Foundation
 import RealmSwift
 
 class PortfolioInteractor {
+    
     //MARK: - Variables
     var delegate: InteractorObserverProtocol?
     fileprivate var database: Realm!
