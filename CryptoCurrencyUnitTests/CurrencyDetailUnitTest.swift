@@ -30,8 +30,11 @@ class CurrencyDetailUnitTest: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        
+    func testInitialization() {
+        _ = currencyDetailVC.view
+        XCTAssert((currencyDetailVC.interactor != nil), "Error not be nil")
+        XCTAssert((currencyDetailVC.presenter != nil), "Error not be nil")
+        XCTAssert((currencyDetailVC.currencyDetailView != nil), "Error not be nil")
     }
     
 }

@@ -24,7 +24,6 @@ class CurrencyListUnitTest: XCTestCase {
         //Initializate CurrentListVC
         currencyListVC = CurrencyListVC()
         currencyListVC.configure(withDatabase: realm)
-        _ = currencyListVC.view
     }
     
     override func tearDown() {
@@ -32,8 +31,11 @@ class CurrencyListUnitTest: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        
+    func testInitialization() {
+        _ = currencyListVC.view
+        XCTAssert((currencyListVC.interactor != nil), "Error can not be nil")
+        XCTAssert((currencyListVC.presenter != nil), "Error can not  be nil")
+        XCTAssert((currencyListVC.currencyListview != nil), "Error can not  be nil")
     }
     
 }
