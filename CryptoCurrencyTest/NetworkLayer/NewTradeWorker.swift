@@ -9,6 +9,7 @@
 import Foundation
 import Alamofire
 
+// Worker to make a Trade and post into server
 class NewTradeWorker {
     
     init(coindId: Int, amount: Double, priceUSD: Double, notes: String?, success: @escaping () -> (), failure:@escaping (Error)-> ()) {

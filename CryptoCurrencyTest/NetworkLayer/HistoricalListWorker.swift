@@ -10,6 +10,7 @@ import Foundation
 import Alamofire
 import RealmSwift
 
+// Worker to retrieve a list of Values and Date of Trade and save into Realm
 class HistoricalListWorker {
     
     init(withDatabase realm: Realm, coinId: Int, success:@escaping () -> (), failure:@escaping (Error)-> ()){

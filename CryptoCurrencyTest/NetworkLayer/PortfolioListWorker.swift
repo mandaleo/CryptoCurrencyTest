@@ -10,6 +10,7 @@ import Foundation
 import Alamofire
 import RealmSwift
 
+// Worker to retrieve a list of portoflio items and save into Realm
 class PortfolioListWorker {
     
     init(withDatabase realm: Realm, success:@escaping () -> (), failure:@escaping (Error)-> ()){

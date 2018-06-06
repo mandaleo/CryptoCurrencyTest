@@ -10,6 +10,7 @@ import Foundation
 import Alamofire
 import RealmSwift
 
+// Worker to retrieve a list of Coins and save into Realm
 class ListCoinsWorker {
     
     init(withDatabase realm: Realm, page: Int, success:@escaping () -> (), failure:@escaping (Error)-> ()){

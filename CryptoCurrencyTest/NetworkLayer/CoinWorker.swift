@@ -10,6 +10,7 @@ import Foundation
 import Alamofire
 import RealmSwift
 
+// Worker to retrieve a expecific Coins and save into Realm if is necessary
 class CoinWorker {
     
     init(withDatabase realm: Realm, coinId: Int, success:(() -> ())?, failure:((Error)-> ())?){

@@ -13,6 +13,16 @@ class APIClient {
     
     private let baseURL = "https://test.cryptojet.io"
     
+    
+    /// Base comunication method using Alamofire
+    ///
+    /// - Parameters:
+    ///   - method: (required) <- "GET", "POST", "PUT", "PATCH","DELETE"
+    ///   - endPoint: (required) <- String with the endpoint of the server
+    ///   - params: (optiona) <- Array of params to inject in body request
+    ///   - headers: (optiona) <- Array of headers to inject in header of the request
+    ///   - success: (optiona) <- completion to execute when request is OK
+    ///   - failure: (optiona) <- completion to execute when request is OK
     func makeRequest(method: HTTPMethod, endPoint: String, params: Parameters?, headers: HTTPHeaders?, success:@escaping (Dictionary<String, Any>?)-> (), failure:@escaping (Error)-> ()){
         guard let url = URL(string: baseURL + endPoint) else {
             return
