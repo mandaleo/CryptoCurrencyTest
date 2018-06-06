@@ -126,7 +126,7 @@ class CurrencyDetailView: UIView, UITextFieldDelegate, GetChartData {
     var amountPrice: [String] = []
     
     func populateChartData(viewModel: [CurrencyValueViewModel]){
-        for vm in viewModel {
+        for vm in viewModel.prefix(10) {
             datePrice.append(vm.dateFormatted)
             amountPrice.append(vm.priceUSD)
         }
