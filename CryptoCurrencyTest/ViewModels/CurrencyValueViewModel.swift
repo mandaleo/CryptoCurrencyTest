@@ -15,6 +15,9 @@ struct CurrencyValueViewModel {
     
     init(priceUSD: String, date: String) {
         self.priceUSD = priceUSD
-        self.dateFormatted = date.isoStringToDateString()
+        let dateArray = date.split(separator: "T")
+        let mothDays = dateArray[0].split(separator: "-").suffix(2).joined(separator: "-")
+        let hourMinutes = dateArray[1].split(separator: ":").prefix(2).joined(separator: ":")
+        self.dateFormatted = mothDays + " " + hourMinutes
     }
 }
